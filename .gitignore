@@ -1,4 +1,5 @@
 dist/index.html
+dist/*.map
 .idea
 
 ## File-based project format:
