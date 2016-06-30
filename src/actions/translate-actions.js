@@ -1,13 +1,13 @@
 import { actionTypes } from '../constants';
-import { uniqueId } from 'lodash'; //TODO: replace id generator
+import { uniqueId } from 'lodash'; // TODO: replace id generator
 
 export function addTranslate(id, text) {
-    let translateId = uniqueId();
+    const translateId = uniqueId();
     return {
         type: actionTypes.ADD_TRANSLATION,
         id,
         translateId,
-        text
+        text,
     };
 }
 
@@ -15,7 +15,7 @@ export function removeTranslate(id, translateId) {
     return {
         type: actionTypes.REMOVE_TRANSLATION,
         id,
-        translateId
+        translateId,
     };
 }
 
@@ -24,21 +24,21 @@ export function updateTranslate(id, translateId, text) {
         type: actionTypes.UPDATE_TRANSLATION,
         id,
         translateId,
-        text
+        text,
     };
 }
 
 export function voteTranslateUp(translateId) {
     return {
         type: actionTypes.VOTE_UP_TRANSLATE,
-        translateId
+        translateId,
     };
 }
 
 export function voteTranslateDown(translateId) {
     return {
         type: actionTypes.VOTE_DOWN_TRANSLATE,
-        translateId
+        translateId,
     };
 }
 
@@ -46,6 +46,6 @@ export function voteTranslateDown(translateId) {
 export function commentTranslate(translateId) {
     return {
         type: actionTypes.COMMENT_TRANSLATE,
-        translateId
+        translateId,
     };
 }

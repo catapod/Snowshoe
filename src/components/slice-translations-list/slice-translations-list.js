@@ -5,13 +5,13 @@ import TranslationControls from '../translation-controls';
 
 export default ({
     slice,
-    translations
+    translations,
 }) => (
-    <div className='slice-translations-list'>
+    <div className="slice-translations-list">
         {slice.translations.map(id => (
-            <div className='slice-translations-list__item'>
-                <div className='slice-translations-list__text'>{translations[id].text}</div>
-                <TranslationControls className='slice-translations-list__controls' translateId={id}/>
+            <div className="slice-translations-list__item">
+                <div className="slice-translations-list__text">{translations[id].text}</div>
+                <TranslationControls className="slice-translations-list__controls" translateId={id}/>
             </div>
         ))}
         <TranslationArea sliceId={slice.id}/>

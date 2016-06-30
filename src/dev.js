@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from 'react-redux';
 import { createStore, combineReducers } from 'redux';
-import {Components, Reducers} from './index.js'
+import { Components, Reducers } from './index.js';
 
 const initState = {
     sliceIds: [1, 2],
@@ -11,24 +11,24 @@ const initState = {
             id: 1,
             name: 't1',
             text: 'long time ago',
-            translations: []
+            translations: [],
         },
         2: {
             id: 2,
             name: 't2',
             text: 'in galaxy far far away...',
-            translations: []
-        }
-    }
+            translations: [],
+        },
+    },
 };
 const reducer = combineReducers(Reducers);
 const store = createStore(reducer, initState);
 
 if (process.env.NODE_ENV === 'development') {
-  ReactDOM.render(
-      <Provider store={store}>
-        <Components.SliceList />
-      </Provider>
-    ,document.getElementsByTagName('body')[0]
-  )
+    ReactDOM.render(
+        <Provider store={store}>
+            <Components.SliceList />
+        </Provider>
+        , document.getElementsByTagName('body')[0]
+    );
 }

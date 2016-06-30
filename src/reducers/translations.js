@@ -3,16 +3,16 @@ import { assign } from 'lodash';
 
 const Translation = ({ id, text }) => ({
     id,
-    text
+    text,
 });
 
 export default (state = {}, action) => {
     switch (action.type) {
-        case actionTypes.ADD_TRANSLATION:
-            return assign({}, state, {
-                [action.translateId]: Translation(action)
-            });
-        default:
-            return state;
+    case actionTypes.ADD_TRANSLATION:
+        return assign({}, state, {
+            [action.translateId]: Translation(action),
+        });
+    default:
+        return state;
     }
 };
