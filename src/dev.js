@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from 'react-redux';
 import { createStore, combineReducers } from 'redux';
-import { Components, Reducers } from './index.js';
+import { SliceList, Reducers } from './index.js';
 
 const initState = {
     sliceIds: [1, 2],
@@ -27,7 +27,7 @@ const store = createStore(reducer, initState);
 if (process.env.NODE_ENV === 'development') {
     ReactDOM.render(
         <Provider store={store}>
-            <Components.SliceList />
+            <SliceList />
         </Provider>
         , document.getElementsByTagName('body')[0]
     );
