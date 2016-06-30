@@ -1,4 +1,4 @@
-export * from './constants';
-export * from './reducers';
-export * from './actions';
-export * from './components';
+export * as Constants from './constants';
+export * as Reducers from './reducers';
+export * as Actions from './actions';
+export * as Components from './components';
