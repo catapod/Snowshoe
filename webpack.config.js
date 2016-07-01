@@ -26,7 +26,7 @@ const config = {
 
   resolve: {
     root: [PATHS.app],
-    extensions: ['', '.jsx', '.js', '.json', '.scss'],
+    extensions: ['', '.jsx', '.js', '.json', '.less'],
     modulesDirectories: ['node_modules', PATHS.app]
   },
 
