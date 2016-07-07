@@ -11,9 +11,9 @@ export default (state = {}, action) => {
             [sliceId]: assign({}, currentSlice, {
                 translations: [
                     ...currentSlice.translations,
-                    action.translateId,
-                ],
-            }),
+                    action.translateId
+                ]
+            })
         });
     default:
         return state;
