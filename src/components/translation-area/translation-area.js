@@ -10,6 +10,10 @@ export default ({
     let onAddClick = event => {
         event.preventDefault();
 
+        if (textArea.value === '') {
+            return;
+        }
+
         addTranslate(sliceId, textArea.value);
         textArea.value = '';
     };

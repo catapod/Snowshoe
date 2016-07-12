@@ -12,10 +12,11 @@
 
 
     "rules": {
-        "indent": [2, 4],
+        "indent": [2, 4, { "SwitchCase": 1 }],
         "max-len": [1, 120],
         "object-curly-spacing": ["error", "always"],
         "quotes": 0,
+        "comma-dangle": 0,
         "no-underscore-dangle": 0,
         "no-case-declarations": 0,
         "no-param-reassign": 1,

@@ -7,5 +7,5 @@ import TranslationControls from './translation-controls';
 export default connect(null, {
     voteTranslateUp,
     voteTranslateDown,
-    commentTranslate,
+    commentTranslate
 })(TranslationControls);

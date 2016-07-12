@@ -11,7 +11,7 @@ export default ({
     commentTranslate,
     voteUpText,
     voteDownText,
-    commentText,
+    commentText
 }) => {
     const handle = (f) => (event) => {
         event.preventDefault();

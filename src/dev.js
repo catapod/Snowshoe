@@ -11,16 +11,18 @@ const initState = {
             id: 1,
             name: 't1',
             text: 'long time ago',
-            translations: [],
+            translations: []
         },
         2: {
             id: 2,
             name: 't2',
             text: 'in galaxy far far away...',
-            translations: [],
-        },
+            translations: []
+        }
     },
+    translations: {}
 };
+
 const reducer = combineReducers(Reducers);
 const store = createStore(reducer, initState);
 
