@@ -1,45 +1,46 @@
-import './translation-area.less';
+import './text-field.less';
 
 import React from 'react';
 
 import { connect } from 'react-redux';
 
 import { addTranslate } from '../../actions/translate-actions';
+import { addComment } from '../../actions/comment-actions';
 
 import { uiKeys } from '../../constants';
 
 
-@connect(null, {
-    addTranslate
-})
-export default class TranslationArea extends React.Component {
+export default class TextField extends React.Component {
     onAddClick(event) {
         event.preventDefault();
-        const { sliceId, addTranslate: add } = this.props;
+        const { sliceId, onAdd } = this.props;
 
         if (this._textArea.value === '') {
             return;
         }
 
-        add(sliceId, this._textArea.value);
+        onAdd(sliceId, this._textArea.value);
         this._textArea.value = '';
     }
 
     render() {
-        const { addButtonText } = this.props;
+        const { buttonText } = this.props;
 
         return (
-            <div className='translation-area'>
+            <div className='text-field'>
                 <textarea ref={c => this._textArea = c}
-                          className='translation-area__text'
+                          className='text-field__text'
                           cols='30'
                           rows='5'/>
-                <a className='translation-area__submit'
+                <a className='text-field__submit'
                    href='#'
                    onClick={e => this.onAddClick(e)}>
-                    {addButtonText || uiKeys.ADD_TRANSLATION}
+                    {buttonText || uiKeys.ADD_TRANSLATION}
                 </a>
             </div>
         );
     }
 }
+
+export const TranslationField = connect(null, { onAdd: addTranslate })(TextField);
+export const CommentField = connect(null, { onAdd: addComment })(TextField);

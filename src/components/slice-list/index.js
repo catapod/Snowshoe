@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { getSlices } from '../../selectors/slices';
 
 import SliceTranslationsList from '../slice-translations-list';
+import CommentsList from '../comments-list';
 
 @connect(state => ({
     slices: getSlices(state)
@@ -21,7 +22,7 @@ export default class SliceList extends React.Component {
                             <SliceTranslationsList sliceId={slice.id}/>
                         </div>
                         <div className='slice-list__cell'>
-                            комментировать
+                            <CommentsList sliceId={slice.id}/>
                         </div>
                     </div>
                 ))}

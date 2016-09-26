@@ -11,13 +11,15 @@ const initState = {
                 id: 1,
                 name: 't1',
                 text: 'long time ago',
-                translations: []
+                translations: [],
+                comments: []
             },
             2: {
                 id: 2,
                 name: 't2',
                 text: 'in galaxy far far away...',
-                translations: []
+                translations: [],
+                comments: []
             }
         },
         order: [1, 2]
