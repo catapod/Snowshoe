@@ -1,9 +1,10 @@
 import { actionTypes } from '../constants';
 import { assign } from 'lodash';
 
-const Translation = ({ id, text }) => ({
-    id,
-    text
+const Translation = ({ translateId, text, rating = 0 }) => ({
+    id: translateId,
+    text,
+    rating
 });
 
 const changeRating = (translation, delta) =>
@@ -11,21 +12,25 @@ const changeRating = (translation, delta) =>
         rating: (translation.rating || 0) + delta
     });
 
-export default (state = {}, action) => {
-    switch (action.type) {
+export default (state = {}, { type, payload }) => {
+    switch (type) {
         case actionTypes.ADD_TRANSLATION:
             return assign({}, state, {
-                [action.translateId]: Translation(action)
+                [payload.translateId]: Translation(payload)
             });
+
+        case actionTypes.REMOVE_TRANSLATION:
+            delete state[payload.translateId];
+            return assign({}, state);
 
         case actionTypes.VOTE_UP_TRANSLATE:
             return assign({}, state, {
-                [action.translateId]: changeRating(state[action.translateId], 1)
+                [payload]: changeRating(state[payload], 1)
             });
 
         case actionTypes.VOTE_DOWN_TRANSLATE:
             return assign({}, state, {
-                [action.translateId]: changeRating(state[action.translateId], -1)
+                [payload]: changeRating(state[payload], -1)
             });
 
         default:
