@@ -1,51 +1,26 @@
 import { actionTypes } from '../constants';
 import { uniqueId } from 'lodash'; // TODO: replace id generator
 
-export function addTranslate(id, text) {
-    const translateId = uniqueId();
-    return {
-        type: actionTypes.ADD_TRANSLATION,
-        id,
-        translateId,
+export const addTranslate = (sliceId, text) => ({
+    type: actionTypes.ADD_TRANSLATION,
+    payload: {
+        sliceId,
+        translateId: uniqueId(),
         text
-    };
-}
+    }
+});
 
-export function removeTranslate(id, translateId) {
-    return {
-        type: actionTypes.REMOVE_TRANSLATION,
-        id,
-        translateId
-    };
-}
+export const deleteTranslate = (sliceId, translateId) => ({
+    type: actionTypes.REMOVE_TRANSLATION,
+    payload: { sliceId, translateId }
+});
 
-export function updateTranslate(id, translateId, text) {
-    return {
-        type: actionTypes.UPDATE_TRANSLATION,
-        id,
-        translateId,
-        text
-    };
-}
+export const voteTranslateUp = (sliceId, translateId) => ({
+    type: actionTypes.VOTE_UP_TRANSLATE,
+    payload: translateId
+});
 
-export function voteTranslateUp(translateId) {
-    return {
-        type: actionTypes.VOTE_UP_TRANSLATE,
-        translateId
-    };
-}
-
-export function voteTranslateDown(translateId) {
-    return {
-        type: actionTypes.VOTE_DOWN_TRANSLATE,
-        translateId
-    };
-}
-
-
-export function commentTranslate(translateId) {
-    return {
-        type: actionTypes.COMMENT_TRANSLATE,
-        translateId
-    };
-}
+export const voteTranslateDown = (sliceId, translateId) => ({
+    type: actionTypes.VOTE_DOWN_TRANSLATE,
+    payload: translateId
+});

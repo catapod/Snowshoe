@@ -1,8 +1,13 @@
 import './translation-rating.less';
 
-import { connect } from 'react-redux';
-import TranslationRating from './translation-rating';
+import React from 'react';
 
-export default connect((state, ownProps) => ({
-    rating: state.translations[ownProps.translateId].rating || 0
-}))(TranslationRating);
+import classNames from 'class-names';
+
+export default function TranslationRating({ value, className }) {
+    return (
+        <div className={classNames('translation-rating', className)}>
+            {value}
+        </div>
+    );
+}
