@@ -1,8 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, combineReducers } from 'redux';
-import { SliceList, Reducers } from './index.js';
+import { storiesOf } from '@kadira/storybook';
+import SliceList from './components/slice-list';
+import { Reducers } from './index';
 
 const initState = {
     slices: {
@@ -30,11 +31,6 @@ const initState = {
 const reducer = combineReducers(Reducers);
 const store = createStore(reducer, initState, window.devToolsExtension && window.devToolsExtension());
 
-if (process.env.NODE_ENV === 'development') {
-    ReactDOM.render(
-        <Provider store={store}>
-            <SliceList />
-        </Provider>
-        , document.getElementsByTagName('body')[0]
-    );
-}
+storiesOf('Translation', module)
+    .addDecorator(getStory => <Provider store={store}>{getStory()}</Provider>)
+    .add('default', () => <SliceList/>);

@@ -1,7 +1,5 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
 
 const isProduction = process.env.NODE_ENV === 'production';
@@ -13,16 +11,13 @@ const PATHS = {
 
 const config = {
   entry: {
-    'index': isProduction ? './src/index.js' : './src/dev.js'
+    'index': './src/index.js'
   },
 
   output: {
-    path: './dist',
-    filename: 'app-components.js',
-    library: 'AppComponents',
-    libraryTarget: 'umd'
+    path: PATHS.build,
+    filename: 'app-components.js'
   },
-
 
   resolve: {
     root: [PATHS.app],
@@ -35,9 +30,7 @@ const config = {
         {
             test: /\.js$/,
             loaders: ['eslint'],
-            include: [
-                PATHS.app
-            ]
+            include: [PATHS.app]
         }
     ],
     loaders: [
@@ -48,91 +41,75 @@ const config = {
       },
       {
         test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url?limit=10000&mimetype=application/font-woff',
+        loader: 'url?limit=10000&mimetype=application/font-woff'
       },
       {
         test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url?limit=10000&mimetype=application/font-woff2',
+        loader: 'url?limit=10000&mimetype=application/font-woff2'
       },
       {
         test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url?limit=10000&mimetype=application/octet-stream',
+        loader: 'url?limit=10000&mimetype=application/octet-stream'
       },
       {
         test: /\.otf(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url?limit=10000&mimetype=application/font-otf',
+        loader: 'url?limit=10000&mimetype=application/font-otf'
       },
       {
         test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'file',
+        loader: 'file'
       },
       {
         test: /\.(svg|png|jpg)(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url-loader?name=images/[name].[ext]?v=[hash]&limit=10000',
+        loader: 'url-loader?name=images/[name].[ext]?v=[hash]&limit=10000'
       },
       {
         test: /\.less$/,
         include: /src/,
-        loader: ExtractTextPlugin.extract(
+        loader: isProduction ? ExtractTextPlugin.extract(
             'style-loader', [
               'css-loader?sourceMap',
               'postcss-loader',
               'less-loader?relativeUrls'
-            ])
-      },
-    ],
+            ]) : 'style-loader!css-loader?sourceMap!postcss-loader!less-loader?relativeUrls'
+      }
+    ]
   },
 
   postcss: (webpack) => {
     return [
       require('autoprefixer')({
-        browsers: ['last 2 versions'],
+        browsers: ['last 2 versions']
       })
     ];
   },
   plugins: [
     new webpack.NoErrorsPlugin(),
-    new ExtractTextPlugin('app-components.css', { allChunks: true }),
-    new CopyWebpackPlugin([{ from: 'tools/template_index.js', to: 'index.js' }]),
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: isProduction ? '"production"' : '"development"',
+        NODE_ENV: isProduction ? '"production"' : '"development"'
       },
-      __DEVELOPMENT__: !isProduction,
-    }),
+      __DEVELOPMENT__: !isProduction
+    })
   ],
   devtool: 'source-map'
 };
 
 
 if (isProduction) {
-
   config.plugins.push.apply([
+    new ExtractTextPlugin('app-components.css', { allChunks: true }),
     new webpack.NoErrorsPlugin(),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({
       sourceMap: false,
       mangle: false,
       compress: {
-        warnings: false,
-      },
-    }),
+        warnings: false
+      }
+    })
   ])
 
-} else {
-
-  config.plugins.push(new HtmlWebpackPlugin());
-  config.devServer = {
-      contentBase: PATHS.build,
-      hot: true,
-      historyApiFallback: true,
-      staticOptions: {
-        index: false
-      },
-      proxy: {
-        '/api/*': 'http://localhost:7777/'
-      }
-    }
 }
 
 module.exports = config;
