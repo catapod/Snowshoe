@@ -1,0 +1,61 @@
+@import './common/colors';
+@import './fonts/roboto-regular';
+
+.comment-form {
+  &__title {
+    margin: 20px 0 10px 0;
+  }
+
+  &__button {
+    float: right;
+
+    width: 35px;
+    height: 35px;
+    margin-left: 5px;
+
+    cursor: pointer;
+
+    background: no-repeat 50% 50%;
+  }
+
+  &__button--send {
+    background-image: url('./svg/send-comment.svg');
+  }
+
+  &__button--emoji {
+    background-image: url('./svg/add-emoji.svg');
+  }
+
+  &__button--add {
+    background-image: url('./svg/add-to-comment.svg');
+  }
+
+  &__text {
+    position: relative;
+    top: -2px;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+    width: calc(~'100% + 20px');
+    padding: 19px 40px 19px 19px;
+
+    resize: none;
+
+    border: 1px solid @gray;
+    border-radius: 4px;
+    background-color: #fff;
+
+    font-family: 'Roboto';
+    font-size: 13px;
+    line-height: 1.3em;
+
+    &:focus {
+      box-shadow: 0 1px 4px rgba(0, 0, 0, .1);
+    }
+  }
+
+  &__submit {
+    display: block;
+  }
+}

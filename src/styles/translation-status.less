@@ -1,0 +1,70 @@
+.translation-status {
+  position: relative;
+
+  text-align: center;
+
+  &:hover &__vote-up,
+  &:hover &__vote-down {
+    display: block;
+  }
+
+  &__indicator {
+    width: 12px;
+    height: 12px;
+    margin: 0 auto 12px;
+
+    border-radius: 50%;
+    background-color: #4072ce;
+  }
+
+  &__rating {
+    position: relative;
+
+    display: inline-block;
+  }
+
+  &__vote-up,
+  &__vote-down {
+    position: absolute;
+    top: -20px;
+
+    display: none;
+
+    width: 16px;
+    height: 16px;
+    padding: 20px;
+
+    cursor: pointer;
+
+    &:after {
+      display: block;
+
+      width: 16px;
+      height: 16px;
+
+      content: '';
+
+      background: url('./svg/arrow.svg') no-repeat center;
+    }
+  }
+
+  &__vote-up {
+    left: 0;
+
+    margin-left: -56px;
+
+    &:after {
+      transform: rotate(-90deg);
+    }
+  }
+
+  &__vote-down {
+    right: 0;
+
+    margin-right: -56px;
+
+    &:after {
+      transform: rotate(90deg)
+    }
+  }
+}

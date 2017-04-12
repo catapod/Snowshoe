@@ -1,0 +1,15 @@
+@import './common/colors';
+
+.chunk-list {
+  display: table;
+
+  width: 100%;
+
+  &__item {
+    width: 100%;
+
+    & + & {
+      border-top: 1px solid @gray;
+    }
+  }
+}

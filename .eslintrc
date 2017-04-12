@@ -4,36 +4,33 @@
         "node": true,
         "es6": true
     },
-
     "parser": "babel-eslint",
-
     "plugins": ["react"],
     "extends": "airbnb",
-
-
     "rules": {
+        "eol-last": 0,
         "indent": [2, 4, { "SwitchCase": 1 }],
         "max-len": [1, 120],
-        "object-curly-spacing": ["error", "always"],
+        "object-curly-spacing": ["error", "never"],
         "quotes": 0,
         "comma-dangle": 0,
         "no-underscore-dangle": 0,
         "no-case-declarations": 0,
         "no-param-reassign": 1,
         "no-use-before-define": 1,
-        "no-console": 2,
         "new-cap": ["error", { "capIsNew": false }],
         "no-return-assign": 0,
-
+        "spaced-comment": 0,
+        "no-unused-vars": 1,
 
         //react
         "jsx-quotes": ["error", "prefer-single"],
         "react/prop-types": [1],
         "react/jsx-indent": [2, 4],
-        "react/jsx-closing-bracket-location": [2, {"location": "after-props"}],
+        "react/jsx-closing-bracket-location": [2, {"location": "line-aligned"}],
         "react/jsx-first-prop-new-line": 0,
         "react/jsx-indent-props": 0,
-        "react/jsx-space-before-closing": 0,
+        "react/jsx-space-before-closing": 1,
         "react/sort-comp": 0,
         "react/no-multi-comp": 0,
         "react/prefer-stateless-function": 0

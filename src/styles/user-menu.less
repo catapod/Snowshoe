@@ -1,0 +1,52 @@
+@import './fonts/roboto-regular';
+
+.user-menu {
+  float: right;
+
+  height: 100%;
+  padding: 15px 10px 15px 0;
+
+  cursor: pointer;
+
+  &::after {
+    position: relative;
+    top: 13px;
+
+    display: block;
+    float: right;
+
+    width: 0;
+    height: 0;
+    margin-left: 5px;
+
+    content: '';
+
+    border: 5px solid transparent;
+    border-top-color: #fff;
+  }
+
+  &__avatar {
+    float: left;
+
+    width: 30px;
+    height: 30px;
+    margin-right: 8px;
+
+    border-radius: 50%;
+    background-image: url('./img/avatar.png');
+    background-size: cover;
+  }
+
+  &__username {
+    float: left;
+
+    text-align: center;
+
+    color: #fff;
+
+    font-family: 'Roboto';
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 30px;
+  }
+}

@@ -1,0 +1,41 @@
+@import './common/colors';
+
+.document-meta {
+  width: 100%;
+  height: 50px;
+  padding: 10px 0;
+
+  color: @dark-gray;
+  border: 1px solid @gray;
+  border-width: 1px 0;
+
+  font-size: 13px;
+  line-height: 27.5px;
+
+  &__original,
+  &__translate {
+    display: inline-block;
+
+    width: 50%;
+  }
+
+  &__original {
+    padding-right: 20px;
+  }
+
+  &__translate {
+    padding-left: 20px;
+  }
+
+  &__lang {
+    float: left;
+
+    text-transform: uppercase;
+
+    font-weight: bold;
+  }
+
+  &__count {
+    text-align: right;
+  }
+}

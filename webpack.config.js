@@ -5,111 +5,105 @@ const webpack = require('webpack');
 const isProduction = process.env.NODE_ENV === 'production';
 
 const PATHS = {
-  app: path.join(__dirname, 'src'),
-  build: path.join(__dirname, 'dist')
+    app: path.join(__dirname, 'src'),
+    build: path.join(__dirname, 'dist')
+};
+
+const rules = {
+    eslint: {
+        test: /\.js$/,
+        enforce: 'pre',
+        include: [PATHS.app],
+        use: 'eslint-loader'
+    },
+    js: {
+        test: /\.(js|jsx)$/,
+        include: [PATHS.app],
+        use: 'babel-loader'
+    },
+    less: {
+        test: /\.less$/,
+        include: [PATHS.app],
+        use: ExtractTextPlugin.extract({
+            fallback: 'style-loader',
+            use: [
+                'css-loader?sourceMap',
+                'postcss-loader',
+                'less-loader?relativeUrls'
+            ]
+        })
+    },
+    img: {
+        test: /\.(jpg|jpeg|png|gif|svg)(\?.*)?$/,
+        loader: 'url-loader',
+        query: {
+            limit: 20000
+        }
+    },
+    fonts: {
+        test: /\.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+        loader: 'file-loader',
+        options: {
+            name: '[name].[ext]',
+            outputPath: 'fonts',
+            publicPath: 'fonts'
+        }
+    }
 };
 
 const config = {
-  entry: {
-    'index': './src/index.js'
-  },
-
-  output: {
-    path: PATHS.build,
-    filename: 'app-components.js'
-  },
-
-  resolve: {
-    root: [PATHS.app],
-    extensions: ['', '.jsx', '.js', '.json', '.less'],
-    modulesDirectories: ['node_modules', PATHS.app]
-  },
-
-  module: {
-    preLoaders: [
-        {
-            test: /\.js$/,
-            loaders: ['eslint'],
-            include: [PATHS.app]
-        }
+    entry: {
+        index: './src/index.js'
+    },
+    output: {
+        path: PATHS.build,
+        filename: 'app-components.js'
+    },
+    target: 'web',
+    resolve: {
+        extensions: ['.js', '.jsx', '.json', '.less'],
+        modules: [
+            PATHS.app,
+            'node_modules'
+        ],
+        enforceExtension: false
+    },
+    module: {
+        rules: [
+            rules.eslint,
+            rules.js,
+            rules.less,
+            rules.img,
+            rules.fonts
+        ]
+    },
+    plugins: [
+        new webpack.NoEmitOnErrorsPlugin(),
+        new ExtractTextPlugin({filename: 'app-components.css', allChunks: true}),
+        new webpack.DefinePlugin({
+            'process.env': {
+                NODE_ENV: isProduction ? '"production"' : '"development"'
+            },
+            __DEV__: !isProduction
+        })
     ],
-    loaders: [
-      {
-        test: /\.(js|jsx)$/,
-        include: /src/,
-        loader: 'babel-loader?cacheDirectory'
-      },
-      {
-        test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url?limit=10000&mimetype=application/font-woff'
-      },
-      {
-        test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url?limit=10000&mimetype=application/font-woff2'
-      },
-      {
-        test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url?limit=10000&mimetype=application/octet-stream'
-      },
-      {
-        test: /\.otf(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url?limit=10000&mimetype=application/font-otf'
-      },
-      {
-        test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'file'
-      },
-      {
-        test: /\.(svg|png|jpg)(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url-loader?name=images/[name].[ext]?v=[hash]&limit=10000'
-      },
-      {
-        test: /\.less$/,
-        include: /src/,
-        loader: isProduction ? ExtractTextPlugin.extract(
-            'style-loader', [
-              'css-loader?sourceMap',
-              'postcss-loader',
-              'less-loader?relativeUrls'
-            ]) : 'style-loader!css-loader?sourceMap!postcss-loader!less-loader?relativeUrls'
-      }
-    ]
-  },
-
-  postcss: (webpack) => {
-    return [
-      require('autoprefixer')({
-        browsers: ['last 2 versions']
-      })
-    ];
-  },
-  plugins: [
-    new webpack.NoErrorsPlugin(),
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: isProduction ? '"production"' : '"development"'
-      },
-      __DEVELOPMENT__: !isProduction
-    })
-  ],
-  devtool: 'source-map'
+    devtool: 'source-map',
+    devServer: {
+        contentBase: path.join(__dirname, 'dist'), // boolean | string | array, static file location
+        historyApiFallback: true,
+        noInfo: true
+    }
 };
 
 
 if (isProduction) {
-  config.plugins.push.apply([
-    new ExtractTextPlugin('app-components.css', { allChunks: true }),
-    new webpack.NoErrorsPlugin(),
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: false,
-      mangle: false,
-      compress: {
-        warnings: false
-      }
-    })
-  ])
-
+    config.plugins.push(
+        new webpack.optimize.UglifyJsPlugin({
+            sourceMap: false,
+            mangle: false,
+            compress: {warnings: false}
+        })
+    );
 }
 
 module.exports = config;
