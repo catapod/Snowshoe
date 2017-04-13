@@ -2,8 +2,9 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { createStore, combineReducers } from 'redux';
 import { storiesOf } from '@kadira/storybook';
-import SliceList from './components/slice-list';
+// import SliceList from './components/slice-list';
 import { Reducers } from './index';
+import StaticBase from './components/static-base';
 
 const initState = {
     slices: {
@@ -33,4 +34,4 @@ const store = createStore(reducer, initState, window.devToolsExtension && window
 
 storiesOf('Translation', module)
     .addDecorator(getStory => <Provider store={store}>{getStory()}</Provider>)
-    .add('default', () => <SliceList/>);
+    .add('default', () => <StaticBase/>);
