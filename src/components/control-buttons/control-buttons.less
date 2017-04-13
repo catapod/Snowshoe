@@ -1,0 +1,40 @@
+@import url('../../common/styles/colors');
+
+.content__control-buttons {
+  float: right;
+  margin-top: 15px;
+  width: 80px;
+  height: 35px;
+}
+
+.content__command-key, 
+.content__view-key {
+  height: 35px;
+  width: 35px;
+  border-radius: 4px;
+  cursor: pointer;
+  float: left
+}
+
+.content__command-key {
+  margin-right: 10px;
+  color: @dark-gray;
+  text-align: center;
+  line-height: 35px;  
+  font-size: 22px;
+
+  &:hover {
+    border: 1px solid @gray;
+    line-height: 33px;
+  }
+}
+
+.content__view-key {
+  background-color: #fff;
+  fill: @black;
+
+  &--active {
+    background-color: @violet;
+    fill: #fff;
+  }
+}
