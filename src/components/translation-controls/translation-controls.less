@@ -1,0 +1,30 @@
+.translation-controls {
+  position: absolute;
+  top: 43px;
+  right: -20px;
+  display: none;
+  width: 52px;
+  height: 17px;
+
+  &:hover {
+    display: block;
+  }
+
+  &__plus,
+  &__minus {
+    display: inline-block;
+    width: 15px;
+    height: 17px;
+    outline: 1px solid red;
+    position: absolute;
+  }
+
+  &__plus {
+    right: 0;
+  }
+
+  &__minus {
+    left: 0;
+  }
+
+}

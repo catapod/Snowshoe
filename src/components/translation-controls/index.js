@@ -1,5 +1,4 @@
 import React from 'react';
-import { uiKeys } from '../../constants';
 
 import classNames from 'class-names';
 
@@ -13,12 +12,6 @@ import { voteTranslateUp, voteTranslateDown, deleteTranslate } from '../../actio
     onRemove: deleteTranslate
 })
 export default class TranslationControls extends React.Component {
-    static defaultProps = {
-        voteUpText: uiKeys.VOTE_UP,
-        voteDownText: uiKeys.VOTE_DOWN,
-        deleteText: uiKeys.DELETE
-    };
-
     handleAction(e, action) {
         const { sliceId, translateId } = this.props;
         e.preventDefault();
@@ -27,25 +20,16 @@ export default class TranslationControls extends React.Component {
 
     render() {
         const {
-            className, onVoteUp, onVoteDown, onRemove,
-            voteUpText, voteDownText, deleteText,
+            className, onVoteUp, onVoteDown
         } = this.props;
 
         return (
             <div className={classNames('translation-controls', className)}>
-                <a className='translation-controls__item' href='#'
+                <a className='translation-controls__plus' href='#'
                    onClick={e => this.handleAction(e, onVoteUp)}>
-                    {voteUpText}
                 </a>
-                {', '}
-                <a className='translation-controls__item' href='#'
+                <a className='translation-controls__minus' href='#'
                    onClick={e => this.handleAction(e, onVoteDown)}>
-                    {voteDownText}
-                </a>
-                {', '}
-                <a className='translation-controls__item' href='#'
-                   onClick={e => this.handleAction(e, onRemove)}>
-                    {deleteText}
                 </a>
             </div>
         );

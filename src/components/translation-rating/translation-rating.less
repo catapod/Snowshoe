@@ -1,13 +1,18 @@
 @import '../../common/styles/colors';
 
 .translation-rating {
-  width: 26px;
-  height: 26px;
-
+  position: absolute;
+  top: 45px;
+  right: -1px;
+  color: @dark-gray;
+  font-size: 13px;
+  width: 14px;
+  height: 13px;
   text-align: center;
+  cursor: pointer;
 
-  border: 1px solid @black;
-  border-radius: 50%;
+  &:hover + .translation-controls {
+    display: block;
+  }
 
-  line-height: 26px;
 }

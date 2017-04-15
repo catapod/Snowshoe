@@ -2,20 +2,69 @@
 
 .slice-list {
   display: table;
-
-  border-collapse: collapse;
-
+  width: 100%;
+  
   &__row {
-    display: table-row;
+    width: 100%;
+
+    & + & {
+      border-top: 1px solid @gray;
+    }
+  }
+}
+
+.original-slice,
+.translate-slice {
+  width: 50%;
+  padding: 15px;
+  display: table-cell;
+  vertical-align: top;
+  font-size: 13px;
+}
+
+.original-slice {
+  padding: 20px;
+  padding-left: 0;
+
+  &__left-icons {
+    float: left;
+    width: 17px;
+    position: absolute;
   }
 
-  &__cell {
-    display: table-cell;
-
-    padding: 4px;
-
-    vertical-align: top;
-
-    border: 1px solid @black;
+  &__mark,
+  &__comments {
+    width: 17px;
+    height: 17px;
+    outline: 1px solid red;
+    display: inline-block;
+    margin-bottom: 3px;
   }
+
+  &__comments-count {
+    text-align: center;
+    font-size: 13px;
+    color: @dark-gray;
+  }
+
+  &__text {
+    margin-left: 40px;
+    line-height: 1.3em;
+  }
+
+  &__info {
+    color: @dark-gray;
+    margin-top: 10px;
+    font-size: 12px;
+  }
+
+  &__number {
+    color: @dark-gray;
+    font-weight: bold;
+  }
+
+}
+
+.translate-slice {
+  padding: 0;
 }
