@@ -1,4 +1,4 @@
-import './slice-translations-list.less';
+import './translations-list.less';
 
 import React from 'react';
 
@@ -16,15 +16,19 @@ export default class SliceTranslationsList extends React.Component {
     render() {
         const { sliceId, items } = this.props;
         return (
-            <div className='slice-translations-list'>
+            <div className='translations-list'>
                 {items.map(item => (
-                    <div key={item.id} className='slice-translations-list__item'>
-                        <div className='slice-translations-list__text'>{item.text}</div>
+                    <div key={item.id} className='translations-list__item'>
+                        <div className='translations-list__text'>
+                            {item.text}
+                        </div>
+                        <div className='translations-list__info'>
+                            <a href='#' className='translations-list__author'>Chuvak72</a> 12 июня в 12:12
+                        </div>
+                        <div className='translations-list__indicator'></div>
                         <TranslationRating
-                            className='slice-translations-list__rating'
                             value={item.rating}/>
                         <TranslationControls
-                            className='slice-translations-list__controls'
                             sliceId={sliceId}
                             translateId={item.id}/>
                     </div>
