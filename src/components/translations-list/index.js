@@ -25,6 +25,7 @@ export default class TranslationsList extends React.Component {
                         <div className='translations-list__info'>
                             <a href='#' className='translations-list__author'>Chuvak72</a> 12 июня в 12:12
                         </div>
+                        <a href='#' className='translations-list__show-more'>Показать еще 3</a>
                         <div className='translations-list__indicator'></div>
                         <TranslationRating
                             value={item.rating}/>
