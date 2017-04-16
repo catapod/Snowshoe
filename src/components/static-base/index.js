@@ -8,6 +8,7 @@ import NavButtons from '../nav-buttons';
 import ControlButtons from '../control-buttons';
 import MetaInf from '../meta-inf';
 import SliceList from '../slice-list';
+import Paginator from '../paginator';
 
 
 export default class StaticBase extends React.Component {
@@ -25,6 +26,7 @@ export default class StaticBase extends React.Component {
                     <NavButtons />
                     <MetaInf />
                     <SliceList />
+                    <Paginator />
                 </main>
                 <aside className='sidebar'></aside>
             </div>
