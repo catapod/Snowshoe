@@ -12,7 +12,7 @@ import TranslationControls from '../translation-controls';
 @connect((state, props) => ({
     items: getTranslations(state, props.sliceId)
 }))
-export default class SliceTranslationsList extends React.Component {
+export default class TranslationsList extends React.Component {
     render() {
         const { sliceId, items } = this.props;
         return (

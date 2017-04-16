@@ -5,7 +5,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { getSlices } from '../../selectors/slices';
 
-import SliceTranslationsList from '../translations-list';
+import TranslationsList from '../translations-list';
 
 @connect(state => ({
     slices: getSlices(state)
@@ -31,7 +31,7 @@ export default class SliceList extends React.Component {
                             </div>
                         </div>
                         <div className='translate-slice'>
-                            <SliceTranslationsList sliceId={slice.id}/>
+                            <TranslationsList sliceId={slice.id}/>
                         </div>
                     </div>
                 ))}
