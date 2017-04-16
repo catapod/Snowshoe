@@ -29,6 +29,10 @@
     text-align: center;
     cursor: pointer;
 
+    &:hover {
+      text-decoration: underline;
+    }
+
     &--current {
       color: #000;
       border-bottom: 4px solid @violet;
@@ -37,8 +41,13 @@
     }
 
     &--ellipsis {
-      cursor: default;
       color: @dark-gray;
+    }
+
+    &--current:hover,
+    &--ellipsis:hover {
+      text-decoration: none;
+      cursor: default;
     }
 
   }
