@@ -9,6 +9,7 @@ import ControlButtons from '../control-buttons';
 import MetaInf from '../meta-inf';
 import SliceList from '../slice-list';
 import Paginator from '../paginator';
+import SidebarSwitch from '../sidebar-switch';
 
 
 export default class StaticBase extends React.Component {
@@ -28,7 +29,9 @@ export default class StaticBase extends React.Component {
                     <SliceList />
                     <Paginator />
                 </main>
-                <aside className='sidebar'></aside>
+                <aside className='sidebar'>
+                    <SidebarSwitch />
+                </aside>
             </div>
         );
     }
