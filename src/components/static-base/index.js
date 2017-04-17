@@ -10,6 +10,7 @@ import MetaInf from '../meta-inf';
 import SliceList from '../slice-list';
 import Paginator from '../paginator';
 import SidebarSwitch from '../sidebar-switch';
+import CommentsList from '../comments-list';
 
 
 export default class StaticBase extends React.Component {
@@ -31,6 +32,7 @@ export default class StaticBase extends React.Component {
                 </main>
                 <aside className='sidebar'>
                     <SidebarSwitch />
+                    <CommentsList />
                 </aside>
             </div>
         );
