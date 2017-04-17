@@ -1,0 +1,43 @@
+@import url('./colors');
+
+.drop-menu {
+
+  &__menu {
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    position: absolute;
+    top: calc(~'100% + 13px');
+    display: none;
+    z-index: 50;
+    border: 1px solid @gray;
+    cursor: default;
+    padding-bottom: 15px;
+    text-align: left;
+
+    &:before {
+      content: '';
+      width: 10px;
+      height: 10px;
+      border: 1px solid @gray;
+      border-width: 1px 1px 0 0;
+      display: block;
+      position: absolute;
+      top: -6px;
+      transform: rotate(-45deg);
+      background-color: #fff;
+      left: calc(50% - 5px);
+      z-index: 51;
+    }
+
+  }
+
+  &__link {
+  position: relative;
+
+    &--active > .drop-menu__menu {
+      display: block;
+    }
+
+  }
+}
