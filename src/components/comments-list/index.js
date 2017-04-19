@@ -1,4 +1,5 @@
 import './comments-list.less';
+import '../../common/styles/drop-menu.less';
 
 import React from 'react';
 
@@ -10,7 +11,18 @@ export default class CommentsList extends React.Component {
         return (
             <div className='comments-list'>
                 <div className='comments-list__head'>
-                    <div className='comments-list__sort'></div>
+                    <div className='comments-list__sort drop-menu__link'>
+                        <div className='drop-menu__menu comments-list__sort-drop'>
+                            <label className='comments-list__sort-drop-label'>
+                                <input type='radio' name='comments-sort'></input>
+                                Сначала новые
+                            </label>
+                            <label className='comments-list__sort-drop-label'>
+                                <input type='radio' name='comments-sort'></input>
+                                Сначала старые
+                            </label>
+                        </div>
+                    </div>
                     <p className='comments-list__title'>Комментарии</p>
                 </div>
                 <div className='comments-list__item'>
@@ -37,9 +49,9 @@ export default class CommentsList extends React.Component {
                 </div>
                 <p className='comments-list__add-comment'>Добавить комментарий</p>
                 <TextField />
-                <div className='comments-list__button'></div>
-                <div className='comments-list__button'></div>
-                <div className='comments-list__button'></div>
+                <div className='comments-list__button comments-list__button-send'></div>
+                <div className='comments-list__button comments-list__button-emoji'></div>
+                <div className='comments-list__button comments-list__button-add'></div>
             </div>
         );
     }

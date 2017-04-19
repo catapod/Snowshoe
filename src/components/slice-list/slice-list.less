@@ -6,11 +6,6 @@
   
   &__row {
     width: 100%;
-    cursor: pointer;
-
-    &:hover {
-      background-color: @light-gray;
-    }
 
     & + & {
       border-top: 1px solid @gray;
@@ -41,15 +36,24 @@
   &__comments {
     width: 17px;
     height: 17px;
-    outline: 1px solid red;
     display: inline-block;
     margin-bottom: 3px;
+    cursor: pointer;
+  }
+
+  &__mark {
+    background-image: url('../../common/svg/bookmark.svg');
+  }
+
+  &__comments {
+    background-image: url('../../common/svg/comments.svg');
   }
 
   &__comments-count {
     text-align: center;
     font-size: 13px;
     color: @dark-gray;
+    margin-top: -10px;
   }
 
   &__text {

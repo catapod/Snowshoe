@@ -42,9 +42,21 @@
   &__show-more {
     color: @light-blue;
     display: block;
-    padding-left: 15px;
     cursor: pointer;
     margin-top: 10px;
+  
+    &:before {
+      content: '';
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      margin-right: 5px;
+      top: 2px;
+      position: relative;
+      background-image: url('../../common/svg/arrow.svg#arrow');
+      transform: rotate(90deg);
+    }
+
   }
 
   &__indicator {

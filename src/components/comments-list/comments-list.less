@@ -20,8 +20,29 @@
   &__sort {
     width: 30px;
     height: 30px;
-    outline: 1px solid green;
     float: right;
+    background-image: url('../../common/svg/comments-sort.svg');
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    cursor: pointer;
+  }
+
+
+  &__sort-drop {
+    width: 160px;
+    left: -65px;
+    padding: 15px
+  }
+
+  &__sort-drop-label {
+    display: block;
+    height: 35px;
+    line-height: 35px;
+    
+    & > input {
+      position: relative;
+      top: 3px;
+    }
   }
 
   &__item {
@@ -62,8 +83,21 @@
     float: right;
     width: 35px;
     height: 35px;
-    outline: 1px solid red;
     cursor: pointer;
     margin-left: 5px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+
+  &__button-send {
+    background-image: url('../../common/svg/send-comment.svg');
+  }
+
+  &__button-emoji {
+    background-image: url('../../common/svg/add-emoji.svg');
+  }
+
+  &__button-add {
+    background-image: url('../../common/svg/add-to-comment.svg');
   }
 }

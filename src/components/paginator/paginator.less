@@ -17,6 +17,28 @@
     font-size: 14px;
     padding: 0 11px;
     cursor: pointer;
+    position: relative;
+  }
+
+  &__back:before {
+    content: '';
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    left: -10px;
+    background-image: url('../../common/svg/arrow.svg');
+    transform: rotate(180deg);
+    top: 21px;
+  }
+
+  &__forward:after {
+    content: '';
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    right: -10px;
+    background-image: url('../../common/svg/arrow.svg');
+    top: 21px;
   }
 
   &__item {

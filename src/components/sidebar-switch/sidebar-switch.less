@@ -12,10 +12,29 @@
     line-height: 35px;
     padding: 15px 0;
     cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
 
     &--active {
       border-bottom: 4px solid @violet;
+      background-position-y: calc(50% + 2px);
     }
+  }
+
+  &__item-dictionary {
+    background-image: url('../../common/svg/sidebar-switch-dictionary.svg');
+  }
+
+  &__item-comments {
+    background-image: url('../../common/svg/sidebar-switch-comments.svg');
+  }
+
+  &__item-users {
+    background-image: url('../../common/svg/sidebar-switch-users.svg');
+  }
+
+  &__item-info {
+    background-image: url('../../common/svg/sidebar-switch-info.svg');
   }
 
 }

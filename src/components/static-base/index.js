@@ -18,7 +18,7 @@ export default class StaticBase extends React.Component {
         return (
             <div>
                 <header className='header'>
-                    <a className='header__logo'></a>
+                    <a href='#' className='header__logo'></a>
                     <UserMenu />
                     <NotifBell />
                 </header>
