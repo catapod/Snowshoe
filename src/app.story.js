@@ -2,7 +2,6 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { createStore, combineReducers } from 'redux';
 import { storiesOf } from '@kadira/storybook';
-// import ChunkList from './components/chunk-list';
 import { Reducers } from './index';
 import StaticBase from './components/static-base';
 
