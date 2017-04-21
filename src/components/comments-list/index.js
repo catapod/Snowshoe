@@ -11,13 +11,13 @@ export default class CommentsList extends React.Component {
         return (
             <div className='comments-list'>
                 <div className='comments-list__head'>
-                    <div className='comments-list__sort drop-menu__link'>
-                        <div className='drop-menu__menu comments-list__sort-drop'>
-                            <label className='comments-list__sort-drop-label'>
+                    <div className='sort-comments drop-menu__link'>
+                        <div className='drop-menu__menu sort-comments__drop'>
+                            <label className='sort-comments__label'>
                                 <input type='radio' name='comments-sort'></input>
                                 Сначала новые
                             </label>
-                            <label className='comments-list__sort-drop-label'>
+                            <label className='sort-comments__label'>
                                 <input type='radio' name='comments-sort'></input>
                                 Сначала старые
                             </label>
@@ -26,23 +26,23 @@ export default class CommentsList extends React.Component {
                     <p className='comments-list__title'>Комментарии</p>
                 </div>
                 <div className='comments-list__item'>
-                    <a href='#' className='comments-list__item-user'>Maxim Valeev</a>
-                    <span className='comments-list__item-date'>Сегодня</span>
-                    <div className='comments-list__item-text'>спамер :)</div>
+                    <a href='#' className='comments-list__user'>Maxim Valeev</a>
+                    <span className='comments-list__date'>Сегодня</span>
+                    <div className='comments-list__text'>спамер :)</div>
                 </div>
                 <div className='comments-list__item'>
-                    <a href='#' className='comments-list__item-user'>Artem Zverkovskiy</a>
-                    <span className='comments-list__item-date'>Вчера</span>
-                    <div className='comments-list__item-text'>
+                    <a href='#' className='comments-list__user'>Artem Zverkovskiy</a>
+                    <span className='comments-list__date'>Вчера</span>
+                    <div className='comments-list__text'>
                         Я же допустил короткие отходы от темы :)
                         + это о проектной деятельности. Так что
                         не надо тут)
                     </div>
                 </div>
                 <div className='comments-list__item'>
-                    <a href='#' className='comments-list__item-user'>Max Gomzz</a>
-                    <span className='comments-list__item-date'>12 июня в 12:12</span>
-                    <div className='comments-list__item-text'>
+                    <a href='#' className='comments-list__user'>Max Gomzz</a>
+                    <span className='comments-list__date'>12 июня в 12:12</span>
+                    <div className='comments-list__text'>
                         Разве это дизайн? Ты просто красиво
                         нарисовал то, что я просил!
                     </div>

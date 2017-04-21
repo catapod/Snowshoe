@@ -17,49 +17,20 @@
     letter-spacing: 1px;
   }
 
-  &__sort {
-    width: 30px;
-    height: 30px;
-    float: right;
-    background-image: url('../../common/svg/comments-sort.svg');
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    cursor: pointer;
-  }
-
-
-  &__sort-drop {
-    width: 160px;
-    left: -65px;
-    padding: 15px
-  }
-
-  &__sort-drop-label {
-    display: block;
-    height: 35px;
-    line-height: 35px;
-    
-    & > input {
-      position: relative;
-      top: 3px;
-    }
-  }
-
+  
   &__item {
     padding: 15px 0;
     border-bottom: 1px dashed @gray;
   }
 
-  &__item-user,
-  &__item-date,
-  &__add-comment {
+  &__user,
+  &__date {
     color: @dark-gray;
     font-size: 13px;
     display: inline-block;
-    height: 17px;
   }
 
-  &__item-user {
+  &__user {
     font-weight: bold;
     margin-right: 5px;
 
@@ -69,10 +40,11 @@
     }
   }
 
-  &__item-text {
+  &__text {
+    display: block;
     color: @black;
     margin-top: 10px;
-    font-size: 14px;
+    font-size: 13px;
   }
 
   &__add-comment {
@@ -99,5 +71,32 @@
 
   &__button-add {
     background-image: url('../../common/svg/add-to-comment.svg');
+  }
+}
+
+.sort-comments {
+  width: 30px;
+  height: 30px;
+  float: right;
+  background-image: url('../../common/svg/comments-sort.svg');
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  cursor: pointer;
+
+  &__drop {
+    width: 160px;
+    left: -65px;
+    padding: 15px
+  }
+
+  &__label {
+    display: block;
+    height: 35px;
+    line-height: 35px;
+    
+    & > input {
+      position: relative;
+      top: 3px;
+    }
   }
 }

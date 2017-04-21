@@ -4,8 +4,8 @@ import '../../common/styles/drop-menu.less';
 export default class ControlButtons extends React.Component {
     render() {
         return (
-            <div className='content__control-buttons'>
-                <div className='content__command-key drop-menu__link'>
+            <div className='control-buttons'>
+                <div className='command-key drop-menu__link'>
                     ⌘
                     <div className='drop-menu__menu hotkeys'>
 
@@ -70,7 +70,7 @@ export default class ControlButtons extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div className='content__view-key content__view-key--active'></div>
+                <div className='view-key view-key--active'></div>
             </div>
         );
     }

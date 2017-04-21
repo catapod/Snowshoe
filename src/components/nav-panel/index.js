@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../common/styles/drop-menu.less';
 
-export default class NavButtons extends React.Component {
+export default class NavPanel extends React.Component {
     render() {
         return (
             <div className='nav-panel'>

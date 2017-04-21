@@ -1,15 +1,15 @@
 import './static-base.less';
 import React from 'react';
 
-import NotifBell from '../notif-bell';
+import NotificationBell from '../notification-bell';
 import UserMenu from '../user-menu';
 import DocumentTitles from '../document-titles';
-import NavButtons from '../nav-buttons';
+import NavPanel from '../nav-panel';
 import ControlButtons from '../control-buttons';
-import MetaInf from '../meta-inf';
+import Meta from '../meta';
 import ChunkList from '../chunk-list';
 import Paginator from '../paginator';
-import SidebarSwitch from '../sidebar-switch';
+import SidebarControls from '../sidebar-controls';
 import CommentsList from '../comments-list';
 
 
@@ -20,18 +20,18 @@ export default class StaticBase extends React.Component {
                 <header className='header'>
                     <a href='#' className='header__logo'></a>
                     <UserMenu />
-                    <NotifBell />
+                    <NotificationBell />
                 </header>
                 <main className='content'>
                     <DocumentTitles />
                     <ControlButtons />
-                    <NavButtons />
-                    <MetaInf />
+                    <NavPanel />
+                    <Meta />
                     <ChunkList />
                     <Paginator />
                 </main>
                 <aside className='sidebar'>
-                    <SidebarSwitch />
+                    <SidebarControls />
                     <CommentsList />
                 </aside>
             </div>

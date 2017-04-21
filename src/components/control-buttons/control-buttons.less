@@ -1,14 +1,14 @@
 @import url('../../common/styles/colors');
 
-.content__control-buttons {
+.control-buttons {
   float: right;
   margin-top: 15px;
   width: 80px;
   height: 35px;
 }
 
-.content__command-key, 
-.content__view-key {
+.command-key, 
+.view-key {
   height: 35px;
   width: 35px;
   border-radius: 4px;
@@ -16,7 +16,7 @@
   float: left
 }
 
-.content__command-key {
+.command-key {
   margin-right: 10px;
   color: @dark-gray;
   text-align: center;
@@ -29,14 +29,16 @@
   }
 }
 
-.content__view-key {
+.view-key {
   background-image: url('../../common/svg/sidebar.svg');
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-color: #fff;
+  border: 1px solid @gray;
 
   &--active {
     background-color: @violet;
+    border-color: @violet;
   }
 }
 
