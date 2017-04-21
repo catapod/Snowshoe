@@ -1,26 +1,26 @@
 import { actionTypes } from '../constants';
 import { uniqueId } from 'lodash'; // TODO: replace id generator
 
-export const addTranslate = (sliceId, text) => ({
+export const addTranslate = (chunkId, text) => ({
     type: actionTypes.ADD_TRANSLATION,
     payload: {
-        sliceId,
+        chunkId,
         translateId: uniqueId(),
         text
     }
 });
 
-export const deleteTranslate = (sliceId, translateId) => ({
+export const deleteTranslate = (chunkId, translateId) => ({
     type: actionTypes.REMOVE_TRANSLATION,
-    payload: { sliceId, translateId }
+    payload: { chunkId, translateId }
 });
 
-export const voteTranslateUp = (sliceId, translateId) => ({
+export const voteTranslateUp = (chunkId, translateId) => ({
     type: actionTypes.VOTE_UP_TRANSLATE,
     payload: translateId
 });
 
-export const voteTranslateDown = (sliceId, translateId) => ({
+export const voteTranslateDown = (chunkId, translateId) => ({
     type: actionTypes.VOTE_DOWN_TRANSLATE,
     payload: translateId
 });

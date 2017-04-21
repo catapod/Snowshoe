@@ -7,7 +7,7 @@ import DocumentTitles from '../document-titles';
 import NavButtons from '../nav-buttons';
 import ControlButtons from '../control-buttons';
 import MetaInf from '../meta-inf';
-import SliceList from '../slice-list';
+import ChunkList from '../chunk-list';
 import Paginator from '../paginator';
 import SidebarSwitch from '../sidebar-switch';
 import CommentsList from '../comments-list';
@@ -27,7 +27,7 @@ export default class StaticBase extends React.Component {
                     <ControlButtons />
                     <NavButtons />
                     <MetaInf />
-                    <SliceList />
+                    <ChunkList />
                     <Paginator />
                 </main>
                 <aside className='sidebar'>

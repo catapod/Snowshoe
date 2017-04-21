@@ -1,9 +1,9 @@
 import { createSelector } from 'reselect';
-import { getSliceComments } from './slices';
+import { getChunkComments } from './chunks';
 
 const getCommentsById = state => state.comments;
 export const getComments = createSelector(
-    getSliceComments,
+    getChunkComments,
     getCommentsById,
     (order, items) => order.map(id => items[id])
 );

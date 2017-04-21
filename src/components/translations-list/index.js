@@ -10,11 +10,11 @@ import TranslationRating from '../translation-rating';
 import TranslationControls from '../translation-controls';
 
 @connect((state, props) => ({
-    items: getTranslations(state, props.sliceId)
+    items: getTranslations(state, props.chunkId)
 }))
 export default class TranslationsList extends React.Component {
     render() {
-        const { sliceId, items } = this.props;
+        const { chunkId, items } = this.props;
         return (
             <div className='translations-list'>
                 {items.map(item => (
@@ -30,11 +30,11 @@ export default class TranslationsList extends React.Component {
                         <TranslationRating
                             value={item.rating}/>
                         <TranslationControls
-                            sliceId={sliceId}
+                            chunkId={chunkId}
                             translateId={item.id}/>
                     </div>
                 ))}
-                <TranslationField sliceId={sliceId}/>
+                <TranslationField chunkId={chunkId}/>
             </div>
         );
     }

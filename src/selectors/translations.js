@@ -1,9 +1,9 @@
 import { createSelector } from 'reselect';
-import { getSliceTranslations } from './slices';
+import { getChunkTranslations } from './chunks';
 
 const getTranslationsById = state => state.translations;
 export const getTranslations = createSelector(
-    getSliceTranslations,
+    getChunkTranslations,
     getTranslationsById,
     (order, items) => order.map(id => items[id])
 );

@@ -2,12 +2,12 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { createStore, combineReducers } from 'redux';
 import { storiesOf } from '@kadira/storybook';
-// import SliceList from './components/slice-list';
+// import ChunkList from './components/chunk-list';
 import { Reducers } from './index';
 import StaticBase from './components/static-base';
 
 const initState = {
-    slices: {
+    chunks: {
         byId: {
             1: {
                 id: 1,

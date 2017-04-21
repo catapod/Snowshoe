@@ -2,12 +2,12 @@ import { combineReducers } from 'redux';
 import { actionTypes } from '../constants';
 import { assign } from 'lodash';
 
-const updateSlice = (state, action, fieldName, transform) => {
-    const { sliceId } = action.payload;
-    const fieldValue = state[sliceId][fieldName];
+const updateChunk = (state, action, fieldName, transform) => {
+    const { chunkId } = action.payload;
+    const fieldValue = state[chunkId][fieldName];
 
     return assign({}, state, {
-        [sliceId]: assign({}, state[sliceId], {
+        [chunkId]: assign({}, state[chunkId], {
             [fieldName]: transform(fieldValue, action.payload)
         })
     });
@@ -16,26 +16,26 @@ const updateSlice = (state, action, fieldName, transform) => {
 const byId = (state = {}, action) => {
     switch (action.type) {
         case actionTypes.ADD_TRANSLATION:
-            return updateSlice(state, action, 'translations',
+            return updateChunk(state, action, 'translations',
                 (translations, actionPayload) => [
                     ...translations,
                     actionPayload.translateId
                 ]);
 
         case actionTypes.REMOVE_TRANSLATION:
-            return updateSlice(state, action, 'translations',
+            return updateChunk(state, action, 'translations',
                 (translations, actionPayload) =>
                     translations.filter(t => t !== actionPayload.translateId));
 
         case actionTypes.ADD_COMMENT:
-            return updateSlice(state, action, 'comments',
+            return updateChunk(state, action, 'comments',
                 (comments, actionPayload) => [
                     ...comments,
                     actionPayload.commentId
                 ]);
 
         case actionTypes.REMOVE_COMMENT:
-            return updateSlice(state, action, 'comments',
+            return updateChunk(state, action, 'comments',
                 (comments, actionPayload) =>
                     comments.filter(t => t !== actionPayload.commentId));
 
