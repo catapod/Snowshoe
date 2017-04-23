@@ -13,9 +13,9 @@ import { voteTranslateUp, voteTranslateDown, deleteTranslate } from '../../actio
 })
 export default class TranslationControls extends React.Component {
     handleAction(e, action) {
-        const { sliceId, translateId } = this.props;
+        const { chunkId, translateId } = this.props;
         e.preventDefault();
-        action(sliceId, translateId);
+        action(chunkId, translateId);
     }
 
     render() {
