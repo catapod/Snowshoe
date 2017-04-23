@@ -4,10 +4,10 @@ export default class SidebarControls extends React.Component {
     render() {
         return (
             <div className='sidebar-controls'>
-                <a className='sidebar-control sidebar-control__dictionary'></a>
-                <a className='sidebar-control sidebar-control__comments sidebar-control--active'></a>
-                <a className='sidebar-control sidebar-control__users'></a>
-                <a className='sidebar-control sidebar-control__info'></a>
+                <a className='sidebar-control sidebar-control--dictionary'></a>
+                <a className='sidebar-control sidebar-control--comments sidebar-control--active'></a>
+                <a className='sidebar-control sidebar-control--users'></a>
+                <a className='sidebar-control sidebar-control--info'></a>
             </div>
         );
     }
