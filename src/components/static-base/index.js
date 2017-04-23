@@ -6,7 +6,7 @@ import UserMenu from '../user-menu';
 import DocumentTitles from '../document-titles';
 import DocumentNavigation from '../document-navigation';
 import ControlButtons from '../control-buttons';
-import Meta from '../meta';
+import DocumentMeta from '../document-meta';
 import ChunkList from '../chunk-list';
 import Paginator from '../paginator';
 import SidebarControls from '../sidebar-controls';
@@ -26,7 +26,7 @@ export default class StaticBase extends React.Component {
                     <DocumentTitles />
                     <ControlButtons />
                     <DocumentNavigation />
-                    <Meta />
+                    <DocumentMeta />
                     <ChunkList />
                     <Paginator />
                 </main>
