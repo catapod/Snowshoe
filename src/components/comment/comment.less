@@ -1,0 +1,29 @@
+@import '../../common/styles/colors';
+@import '../../common/fonts/roboto-regular';
+
+.comment {
+
+  &__author,
+  &__date {
+    color: @dark-gray;
+    font-size: 13px;
+    display: inline-block;
+  }
+
+  &__author {
+    font-weight: bold;
+    margin-right: 5px;
+
+    &:hover {
+      text-decoration: underline;
+      color: @black;
+    }
+  }
+
+  &__body {
+    display: block;
+    color: @black;
+    margin-top: 10px;
+    font-size: 13px;
+  }
+}
