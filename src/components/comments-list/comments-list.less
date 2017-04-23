@@ -1,5 +1,4 @@
 @import '../../common/styles/colors';
-@import '../../common/styles/mixins/with-dropdown';
 @import '../../common/fonts/roboto-regular';
 
 .comments-list {
@@ -21,29 +20,5 @@
   &__item {
     padding: 15px 0;
     border-bottom: 1px dashed @gray;
-  }
-}
-
-.sort-comments {
-  .with-dropdown();
-
-  width: 30px;
-  height: 30px;
-  float: right;
-  background-image: url('../../common/svg/comments-sort.svg');
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  cursor: pointer;
-
-  &__dropdown {
-    width: 160px;
-    left: -65px;
-    padding: 15px
-  }
-
-  &__label {
-    display: block;
-    height: 35px;
-    line-height: 35px;
   }
 }

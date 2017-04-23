@@ -2,6 +2,7 @@ import './comments-list.less';
 
 import React from 'react';
 
+import CommentsSortBox from '../comments-sort-box';
 import CommentForm from '../comment-form';
 import Comment from '../comment';
 
@@ -10,16 +11,7 @@ export default class CommentsList extends React.Component {
         return (
             <div className='comments-list'>
                 <div className='comments-list__head'>
-                    <div className='sort-comments sort-comments__droplink'>
-                        <div className='sort-comments__dropdown'>
-                            <label className='sort-comments__label'>
-                                <input type='radio' name='comments-sort'/> Сначала новые
-                            </label>
-                            <label className='sort-comments__label'>
-                                <input type='radio' name='comments-sort'/> Сначала старые
-                            </label>
-                        </div>
-                    </div>
+                    <CommentsSortBox/>
                     <p className='comments-list__title'>Комментарии</p>
                 </div>
                 <div className='comments-list__item'>
