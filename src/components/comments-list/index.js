@@ -3,7 +3,7 @@ import '../../common/styles/drop-menu.less';
 
 import React from 'react';
 
-import TextField from '../text-field';
+import CommentForm from '../comment-form';
 import Comment from '../comment';
 
 export default class CommentsList extends React.Component {
@@ -41,11 +41,7 @@ export default class CommentsList extends React.Component {
                         date='12 июня в 12:12'
                         body='Разве это дизайн? Ты просто красиво нарисовал то, что я просил!' />
                 </div>
-                <p className='comments-list__add-comment'>Добавить комментарий</p>
-                <TextField />
-                <div className='comments-list__button comments-list__button-send'></div>
-                <div className='comments-list__button comments-list__button-emoji'></div>
-                <div className='comments-list__button comments-list__button-add'></div>
+                <CommentForm />
             </div>
         );
     }
