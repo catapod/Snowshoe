@@ -1,5 +1,4 @@
 import './comments-list.less';
-import '../../common/styles/drop-menu.less';
 
 import React from 'react';
 
@@ -11,8 +10,8 @@ export default class CommentsList extends React.Component {
         return (
             <div className='comments-list'>
                 <div className='comments-list__head'>
-                    <div className='sort-comments drop-menu__link'>
-                        <div className='drop-menu__menu sort-comments__drop'>
+                    <div className='sort-comments sort-comments__droplink'>
+                        <div className='sort-comments__dropdown'>
                             <label className='sort-comments__label'>
                                 <input type='radio' name='comments-sort'/> Сначала новые
                             </label>

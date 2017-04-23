@@ -1,4 +1,5 @@
 @import '../../common/styles/colors';
+@import '../../common/styles/mixins/with-dropdown';
 @import '../../common/fonts/roboto-regular';
 
 .comments-list {
@@ -17,7 +18,6 @@
     letter-spacing: 1px;
   }
 
-  
   &__item {
     padding: 15px 0;
     border-bottom: 1px dashed @gray;
@@ -75,6 +75,8 @@
 }
 
 .sort-comments {
+  .with-dropdown();
+
   width: 30px;
   height: 30px;
   float: right;
@@ -83,7 +85,7 @@
   background-repeat: no-repeat;
   cursor: pointer;
 
-  &__drop {
+  &__dropdown {
     width: 160px;
     left: -65px;
     padding: 15px
@@ -93,10 +95,5 @@
     display: block;
     height: 35px;
     line-height: 35px;
-    
-    & > input {
-      position: relative;
-      top: 3px;
-    }
   }
 }
