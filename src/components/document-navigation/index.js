@@ -6,7 +6,7 @@ export default class DocumentNavigation extends React.Component {
         return (
             <div className='document-navigation'>
                 <div className='document-navigation__button document-navigation__button--left'></div>
-                <div className='document-navigation__button document-navigation__button--more document-navigation__dropdown__link'>
+                <div className='document-navigation__button document-navigation__button--more document-navigation__droplink'>
                     ···
                     <div className='document-navigation__dropdown'>
                         <a href='#' className='document-navigation__link'>К моему последнему переводу</a>

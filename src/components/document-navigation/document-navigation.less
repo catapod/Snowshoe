@@ -1,7 +1,9 @@
 @import '../../common/styles/colors';
-@import '../../common/styles/mixins/drop-menu';
+@import '../../common/styles/mixins/with-dropdown';
 
 .document-navigation {
+  .with-dropdown();
+  
   width: 110px;
   height: 30px;
   border-radius: 4px;
@@ -62,7 +64,6 @@
   }
 
   &__dropdown {
-    .drop-menu();
     width: 230px;
     left: -85px;
   }

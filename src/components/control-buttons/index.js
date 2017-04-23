@@ -1,14 +1,12 @@
 import React from 'react';
-import '../../common/styles/drop-menu.less';
 
 export default class ControlButtons extends React.Component {
     render() {
         return (
             <div className='control-buttons'>
-                <div className='command-key drop-menu__link'>
+                <div className='command-key hotkeys__droplink'>
                     ⌘
-                    <div className='drop-menu__menu hotkeys'>
-
+                    <div className='hotkeys__dropdown'>
                         <div className='hotkeys__group'>
                             <p className='hotkeys__title'>Группа команд</p>
                             <div className='hotkeys__command'>

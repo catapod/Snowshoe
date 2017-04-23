@@ -1,7 +1,7 @@
 @import url('../colors');
 
-.drop-menu() {
-  & {
+.with-dropdown() {
+  &__dropdown {
     background-color: #fff;
     border-radius: 4px;
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
@@ -32,11 +32,11 @@
     }
   }
 
-  &__link {
+  &__droplink {
     position: relative;
   }
   
-  &__link--active > & {
-      display: block;
-    }
+  &__droplink--active > &__dropdown {
+    display: block;
+  }
 }
