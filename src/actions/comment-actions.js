@@ -1,12 +1,12 @@
 import { actionTypes } from '../constants';
 import { uniqueId } from 'lodash'; // TODO: replace id generator
 
-export const addComment = (sliceId, text) => ({
+export const addComment = (chunkId, text) => ({
     type: actionTypes.ADD_COMMENT,
-    payload: { sliceId, text, commentId: uniqueId() }
+    payload: { chunkId, text, commentId: uniqueId() }
 });
 
-export const removeComment = (sliceId, commentId) => ({
+export const removeComment = (chunkId, commentId) => ({
     type: actionTypes.REMOVE_COMMENT,
-    payload: { sliceId, commentId }
+    payload: { chunkId, commentId }
 });

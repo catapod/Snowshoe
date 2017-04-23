@@ -2,23 +2,23 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { createStore, combineReducers } from 'redux';
 import { storiesOf } from '@kadira/storybook';
-import SliceList from './components/slice-list';
 import { Reducers } from './index';
+import StaticBase from './components/static-base';
 
 const initState = {
-    slices: {
+    chunks: {
         byId: {
             1: {
                 id: 1,
                 name: 't1',
-                text: 'long time ago',
+                text: 'This course covers matrix theory and linear algebra, emphasizing topics useful in other disciplines. Linear algebra is a branch of mathematics that studies systems of linear equations and the properties of matrices.',
                 translations: [],
                 comments: []
             },
             2: {
                 id: 2,
                 name: 't2',
-                text: 'in galaxy far far away...',
+                text: 'After successfully completing the course, you will have a good understanding of the following topics and their applications:',
                 translations: [],
                 comments: []
             }
@@ -33,4 +33,4 @@ const store = createStore(reducer, initState, window.devToolsExtension && window
 
 storiesOf('Translation', module)
     .addDecorator(getStory => <Provider store={store}>{getStory()}</Provider>)
-    .add('default', () => <SliceList/>);
+    .add('default', () => <StaticBase/>);

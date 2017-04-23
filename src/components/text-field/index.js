@@ -13,13 +13,13 @@ import { uiKeys } from '../../constants';
 export default class TextField extends React.Component {
     onAddClick(event) {
         event.preventDefault();
-        const { sliceId, onAdd } = this.props;
+        const { chunkId, onAdd } = this.props;
 
         if (this._textArea.value === '') {
             return;
         }
 
-        onAdd(sliceId, this._textArea.value);
+        onAdd(chunkId, this._textArea.value);
         this._textArea.value = '';
     }
 
