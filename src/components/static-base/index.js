@@ -4,7 +4,7 @@ import React from 'react';
 import NotificationBell from '../notification-bell';
 import UserMenu from '../user-menu';
 import DocumentTitles from '../document-titles';
-import NavPanel from '../nav-panel';
+import DocumentNavigation from '../document-navigation';
 import ControlButtons from '../control-buttons';
 import Meta from '../meta';
 import ChunkList from '../chunk-list';
@@ -25,7 +25,7 @@ export default class StaticBase extends React.Component {
                 <main className='content'>
                     <DocumentTitles />
                     <ControlButtons />
-                    <NavPanel />
+                    <DocumentNavigation />
                     <Meta />
                     <ChunkList />
                     <Paginator />
