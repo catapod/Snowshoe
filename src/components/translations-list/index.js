@@ -6,8 +6,7 @@ import { connect } from 'react-redux';
 import { getTranslations } from '../../selectors/translations';
 
 import { TranslationField } from '../text-field';
-import TranslationRating from '../translation-rating';
-import TranslationControls from '../translation-controls';
+import Translation from '../translation';
 
 @connect((state, props) => ({
     items: getTranslations(state, props.chunkId)
@@ -19,19 +18,7 @@ export default class TranslationsList extends React.Component {
             <div className='translations-list'>
                 {items.map(item => (
                     <div key={item.id} className='translations-list__item'>
-                        <div className='translations-list__text'>
-                            {item.text}
-                        </div>
-                        <div className='translations-list__info'>
-                            <a href='#' className='translations-list__author'>Chuvak72</a> 12 июня в 12:12
-                        </div>
-                        <a href='#' className='translations-list__show-more'>Показать еще 3</a>
-                        <div className='translations-list__indicator'></div>
-                        <TranslationRating
-                            value={item.rating}/>
-                        <TranslationControls
-                            chunkId={chunkId}
-                            translateId={item.id}/>
+                        <Translation chunkId={chunkId} {...item}/>
                     </div>
                 ))}
                 <TranslationField chunkId={chunkId}/>
