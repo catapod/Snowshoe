@@ -1,9 +1,9 @@
 import {state, props, signal} from 'cerebral/tags';
 
 export const parts = {
-    material: 'material',
     chunks: 'chunks',
     translations: 'translations',
+    comments: 'comments',
     activeChunkId: 'activeChunkId',
     activeTranslateId: 'activeTranslateId',
     draftText: 'draftText',

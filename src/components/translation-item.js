@@ -69,14 +69,14 @@ export default connect({
     onClick: tags.translateClicked,
     onChange: tags.translateChanged,
     onBlur: tags.translateBlurred
-}, ({item, onChange, onBlur, onClick}, {chunkId, id, edit}) => ({
+}, ({item, onChange, onBlur, onClick}, {id, edit}) => ({
     id,
     edit,
     text: item.body,
     translator: item.translator.nickname,
     onClick: (e) => {
         e.stopPropagation();
-        onClick({id, chunkId});
+        onClick({id, chunkId: item.parentId});
     },
     onChange: e => onChange({id, value: e.target.value}),
     onBlur: () => onBlur({id})

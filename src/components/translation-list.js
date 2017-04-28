@@ -8,7 +8,7 @@ import '../styles/translation-list.less';
 import sn from 'class-names';
 
 
-function TranslationList({chunkId, items = [], activeTranslateId, expanded, haveDraft}) {
+function TranslationList({items = [], activeTranslateId, expanded, haveDraft}) {
     const [firstItem, ...restItems] = items;
     const restCount = restItems.length;
 
@@ -18,7 +18,6 @@ function TranslationList({chunkId, items = [], activeTranslateId, expanded, have
                 <TranslationItem
                     key={parts.draftId}
                     id={parts.draftId}
-                    chunkId={chunkId}
                     edit
                 />
             )}
@@ -26,7 +25,6 @@ function TranslationList({chunkId, items = [], activeTranslateId, expanded, have
                 <TranslationItem
                     key={firstItem}
                     id={firstItem}
-                    chunkId={chunkId}
                     edit={firstItem === activeTranslateId}
                 />)}
             {expanded
@@ -34,7 +32,6 @@ function TranslationList({chunkId, items = [], activeTranslateId, expanded, have
                     <TranslationItem
                         key={item}
                         id={item}
-                        chunkId={chunkId}
                         edit={item === activeTranslateId}
                     />
                 ))
@@ -48,7 +45,6 @@ function TranslationList({chunkId, items = [], activeTranslateId, expanded, have
 }
 
 TranslationList.propTypes = {
-    chunkId: PropTypes.number,
     items: PropTypes.array,
     activeTranslateId: PropTypes.number,
     expanded: PropTypes.bool,
@@ -58,8 +54,7 @@ TranslationList.propTypes = {
 export default connect({
     items: tags.translationIds,
     activeTranslateId: tags.activeTranslateId
-}, ({items, activeTranslateId}, {expanded, chunkId}) => ({
-    chunkId,
+}, ({items, activeTranslateId}, {expanded}) => ({
     items,
     expanded,
     activeTranslateId,
