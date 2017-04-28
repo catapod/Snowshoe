@@ -4,15 +4,12 @@
 
 Kursomir translate applications.
 
-## Component development
+## Development
 
-Marvelous, fantastic, awesome [storybook](https://getstorybook.io/) is included into project for component development.
-Just add .story.js file to your component and it'll be added to project storybook.
-
-For starting storybook use:
+To start development server simply type:
 
 ```bash
-npm run storybook
+npm start
 ```
 
 ## Code Style
