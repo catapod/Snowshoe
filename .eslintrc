@@ -8,7 +8,6 @@
     "plugins": ["react"],
     "extends": "airbnb",
     "rules": {
-        "eol-last": 0,
         "indent": [2, 4, { "SwitchCase": 1 }],
         "max-len": [1, 120],
         "object-curly-spacing": ["error", "never"],
