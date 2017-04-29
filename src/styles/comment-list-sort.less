@@ -1,0 +1,29 @@
+@import './mixins/with-dropdown';
+
+.comment-list-sort {
+  float: right;
+
+  width: 30px;
+  height: 30px;
+
+  cursor: pointer;
+
+  background: url('./svg/comments-sort.svg') no-repeat 50% 50%;
+
+  .with-dropdown();
+
+  &__dropdown {
+    left: -65px;
+
+    width: 160px;
+    padding: 15px
+  }
+
+  &__label {
+    display: block;
+
+    height: 35px;
+
+    line-height: 35px;
+  }
+}

@@ -1,0 +1,54 @@
+@import './common/colors';
+@import './fonts/roboto-regular';
+
+@side: 40px;
+@gap: 20px;
+
+.translation-item {
+  position: relative;
+
+  margin-left: 20px;
+  padding: @gap @side @gap 0;
+
+  & + & {
+    border-top: 1px solid @gray;
+  }
+
+  &__text {
+    position: relative;
+
+    width: 100%;
+
+    font-family: 'Roboto';
+    font-size: 13px;
+    line-height: 1.3em;
+  }
+
+  &__info {
+    margin-top: 10px;
+
+    color: @dark-gray;
+
+    font-size: 13px;
+  }
+
+  &__author {
+    color: @dark-gray;
+
+    font-weight: bold;
+    &:hover {
+      text-decoration: underline;
+
+      color: #000;
+    }
+  }
+
+  &__side {
+    position: absolute;
+    top: @gap;
+    right: 0;
+    bottom: @gap;
+
+    width: @side;
+  }
+}

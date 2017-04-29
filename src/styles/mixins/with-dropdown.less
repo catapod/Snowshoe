@@ -1,0 +1,51 @@
+@import '../common/colors';
+
+.with-dropdown() {
+  &__dropdown {
+    position: absolute;
+    z-index: 50;
+    top: calc(~'100% + 13px');
+
+    display: none;
+
+    padding-bottom: 15px;
+
+    cursor: default;
+    text-align: left;
+
+    border: 1px solid @gray;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+
+    font-size: 13px;
+    line-height: 1.5em;
+
+    &:before {
+      position: absolute;
+      z-index: 51;
+      top: -6px;
+      left: calc(50% - 5px);
+
+      display: block;
+
+      width: 10px;
+      height: 10px;
+
+      content: '';
+      transform: rotate(-45deg);
+
+      border: 1px solid @gray;
+      border-width: 1px 1px 0 0;
+      background-color: #fff;
+    }
+  }
+
+  &__droplink {
+    position: relative;
+  }
+  
+  &__droplink--active > &__dropdown {
+    display: block;
+  }
+}

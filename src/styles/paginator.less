@@ -1,0 +1,94 @@
+@import './common/colors';
+
+.paginator {
+  width: 100%;
+  height: 60px;
+  margin-top: 15px;
+
+  text-align: center;
+
+  border: solid @gray;
+  border-width: 1px 0;
+  
+  &__back,
+  &__forward {
+    position: relative;
+
+    display: inline-block;
+
+    height: 60px;
+    padding: 0 11px;
+
+    cursor: pointer;
+
+    color: @light-blue;
+
+    font-size: 14px;
+    line-height: 60px;
+  }
+
+  &__back:before {
+    position: absolute;
+    top: 21px;
+    left: -10px;
+
+    width: 15px;
+    height: 15px;
+
+    content: '';
+    transform: rotate(180deg);
+
+    background-image: url('./svg/arrow.svg');
+  }
+
+  &__forward:after {
+    position: absolute;
+    top: 21px;
+    right: -10px;
+
+    width: 15px;
+    height: 15px;
+
+    content: '';
+
+    background-image: url('./svg/arrow.svg');
+  }
+
+  &__item {
+    display: inline-block;
+
+    height: 60px;
+    padding: 0 11px;
+
+    cursor: pointer;
+    text-align: center;
+
+    color: @light-blue;
+
+    font-size: 14px;
+    line-height: 60px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &--current {
+      box-sizing: content-box;
+      height: 55px;
+
+      color: #000;
+      border-bottom: 4px solid @violet;
+    }
+
+    &--ellipsis {
+      color: @dark-gray;
+    }
+
+    &--current:hover,
+    &--ellipsis:hover {
+      cursor: default;
+      text-decoration: none;
+    }
+
+  }
+}

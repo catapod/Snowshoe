@@ -1,0 +1,28 @@
+@import './common/colors';
+@import './fonts/roboto-regular';
+
+.comment-list {
+  &__head {
+    height: 50px;
+    padding: 10px 0;
+
+    border-bottom: 1px solid @gray;
+
+    line-height: 30px;
+  }
+
+  &__title {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    color: @dark-gray;
+
+    font-size: 12px;
+  }
+
+  &__item {
+    padding: 15px 0;
+
+    border-bottom: 1px dashed @gray;
+  }
+}
