@@ -1,0 +1,8 @@
+<svg viewBox="0 0 18 16" xmlns="http://www.w3.org/2000/svg">
+  <g>
+    <title>Layer 1</title>
+    <g id="layer1">
+      <path fill="#ffffff" fill-rule="nonzero" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke-dashoffset="0" d="m1,-0.00001c-0.5539,0 -1,0.4461 -1,1l0,14.002c0,0.5539 0.4461,1 1,1l16,0c0.5539,0 1,-0.4461 1,-1l0,-14.002c0,-0.5539 -0.4461,-1 -1,-1l-16,0zm11,2l4,0l0,1.9981l-4,0l0,-1.9981zm-10,0l8,0l0,11.998l-8,0l0,-11.998zm10,3.998l4,0l0,1.9981l-4,0l0,-1.9981zm0,4l4,0l0,1.9981l-4,0l0,-1.9981z" id="rect10111"/>
+    </g>
+  </g>
+</svg>

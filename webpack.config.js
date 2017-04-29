@@ -9,6 +9,12 @@ const PATHS = {
     build: path.join(__dirname, 'dist')
 };
 
+const extractLess = new ExtractTextPlugin({
+    filename: 'snowshoe.css',
+    allChunks: true,
+    disable: !isProduction
+});
+
 const rules = {
     eslint: {
         test: /\.js$/,
@@ -24,24 +30,28 @@ const rules = {
     less: {
         test: /\.less$/,
         include: [PATHS.app],
-        use: ExtractTextPlugin.extract({
+        use: extractLess.extract({
             fallback: 'style-loader',
             use: [
-                'css-loader?sourceMap',
-                'postcss-loader',
-                'less-loader?relativeUrls'
+                {loader: 'css-loader', options: {sourceMap: true}},
+                {loader: 'postcss-loader'},
+                {loader: 'less-loader'}
             ]
         })
     },
     img: {
-        test: /\.(jpg|jpeg|png|gif|svg)(\?.*)?$/,
+        test: /\.(jpg|jpeg|png|gif)(\?.*)?$/,
         loader: 'url-loader',
-        query: {
+        options: {
             limit: 20000
         }
     },
+    svg: {
+        test: /\.svg$/,
+        loader: 'svg-inline-loader'
+    },
     fonts: {
-        test: /\.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+        test: /\.(ttf|otf|eot|woff(2)?)(\?[a-z0-9]+)?$/,
         loader: 'file-loader',
         options: {
             name: '[name].[ext]',
@@ -57,7 +67,7 @@ const config = {
     },
     output: {
         path: PATHS.build,
-        filename: 'app-components.js'
+        filename: 'snowshoe.js'
     },
     target: 'web',
     resolve: {
@@ -74,12 +84,13 @@ const config = {
             rules.js,
             rules.less,
             rules.img,
+            rules.svg,
             rules.fonts
         ]
     },
     plugins: [
+        extractLess,
         new webpack.NoEmitOnErrorsPlugin(),
-        new ExtractTextPlugin({filename: 'app-components.css', allChunks: true}),
         new webpack.DefinePlugin({
             'process.env': {
                 NODE_ENV: isProduction ? '"production"' : '"development"'

@@ -1,0 +1,11 @@
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <g>
+    <title>Layer 1</title>
+    <g id="layer1">
+      <g transform="matrix(1.4999999,0,0,1.5,4570.2854,-6.7525207) " id="g11893">
+        <rect opacity="0" fill="#ff00ff" fill-rule="nonzero" stroke-width="2" stroke-miterlimit="4" stroke-dashoffset="0" transform="matrix(0,1,-1,0,0,0) " id="rect11895" width="16" height="16" x="4.50168" y="3030.85714"/>
+        <path fill="#8777b5" fill-rule="nonzero" stroke-width="2" stroke-miterlimit="4" stroke-dashoffset="0" d="m-3044.02378,7.16787c-0.831,0 -1.5,0.669 -1.5,1.5l0,6.33333c0,0.831 0.66887,1.5 1.5,1.5l5.16667,0l2.66667,2.66667l1.33333,0.02067l0,-2.68753l1.16667,0c0.831,0 1.5,-0.669 1.5,-1.5l0,-6.33333c0,-0.831 -0.669,-1.5 -1.5,-1.5l-10.33333,0l0,0.0002zm-0.16667,1.33333l10.66667,0l0,6.66667l-2.68747,0l0.02067,2l-2,-2l-6,0l0,-6.66667l0.00013,0z" id="path11897"/>
+      </g>
+    </g>
+  </g>
+</svg>

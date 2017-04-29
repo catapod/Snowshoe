@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/control-buttons.less';
+import sidebar from '../assets/sidebar.svg';
 
 
 function ControlButtons() {
@@ -69,7 +70,10 @@ function ControlButtons() {
                     </div>
                 </div>
             </div>
-            <div className='view-key view-key--active' />
+            <div
+                className='view-key view-key--active'
+                dangerouslySetInnerHTML={{__html: sidebar}}
+            />
         </div>
     );
 }

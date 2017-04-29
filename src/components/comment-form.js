@@ -1,5 +1,8 @@
 import React from 'react';
 import '../styles/comment-form.less';
+import emoji from '../assets/emoji.svg';
+import attach from '../assets/attach.svg';
+import send from '../assets/send.svg';
 
 
 function CommentForm() {
@@ -14,9 +17,18 @@ function CommentForm() {
                 />
                 <a className='comment-form__submit' href='#' />
             </div>
-            <div className='comment-form__button comment-form__button--send' />
-            <div className='comment-form__button comment-form__button--emoji' />
-            <div className='comment-form__button comment-form__button--add' />
+            <div
+                className='comment-form__button comment-form__button--send'
+                dangerouslySetInnerHTML={{__html: send}}
+            />
+            <div
+                className='comment-form__button comment-form__button--emoji'
+                dangerouslySetInnerHTML={{__html: emoji}}
+            />
+            <div
+                className='comment-form__button comment-form__button--add'
+                dangerouslySetInnerHTML={{__html: attach}}
+            />
         </div>
     );
 }

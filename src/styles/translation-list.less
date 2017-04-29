@@ -1,6 +1,6 @@
 @import './common/colors';
 
-.translations-list {
+.translation-list {
   width: 100%;
 
   &__more {
@@ -11,21 +11,18 @@
     cursor: pointer;
 
     color: @light-blue;
+  }
 
-    &:before {
-      position: relative;
-      top: 2px;
+  &__icon {
+    position: relative;
+    top: 2px;
 
-      display: inline-block;
+    display: inline-block;
 
-      width: 15px;
-      height: 15px;
-      margin-right: 5px;
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
 
-      content: '';
-      transform: rotate(90deg);
-
-      background-image: url('./svg/arrow.svg#arrow');
-    }
+    transform: rotate(90deg);
   }
 }
