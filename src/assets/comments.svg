@@ -1,14 +1,3 @@
-<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-  <g>
-    <title>Layer 1</title>
-    <g id="layer1">
-      <g id="g12398">
-        <g opacity="0.75" id="g8912">
-          <rect opacity="0" fill="#ff00ff" fill-rule="nonzero" stroke-width="2" stroke-miterlimit="4" stroke-dashoffset="0" transform="matrix(0,1,-1,0,0,0) " id="rect8914" width="16" height="16" x="0.00002" y="-15.99994"/>
-          <path fill="#928e9e" fill-rule="nonzero" stroke-width="2" stroke-miterlimit="4" stroke-dashoffset="0" id="path8916" d="m1.49994,2.00002c-0.831,0 -1.5,0.669 -1.5,1.5l0,8c0,0.831 0.669,1.5 1.5,1.5l7,0l3,3.00003l0.5,-0.00003l0,-3l2.5,0c0.831,0 1.5,-0.669 1.5,-1.5l0,-8c0,-0.831 -0.669,-1.5 -1.5,-1.5l-13,0z"/>
-        </g>
-        <text font-style="normal" font-weight="normal" font-size="14px" font-family="Roboto" text-anchor="start" clip-rule="nonzero" fill="#928e9e" fill-rule="nonzero" stroke-width="0.09776px" stroke-miterlimit="4" stroke-dashoffset="0" id="text8918" y="27.83192" x="4.61028" xml:space="preserve"/>
-      </g>
-    </g>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <path fill="#928e9e" d="M1.49994 2.00002c-.831 0-1.5.669-1.5 1.5v8c0 .831.669 1.5 1.5 1.5h7l3 3.00003.5-.00003v-3h2.5c.831 0 1.5-.669 1.5-1.5v-8c0-.831-.669-1.5-1.5-1.5h-13z" opacity=".75"/>
 </svg>
