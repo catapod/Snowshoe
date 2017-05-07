@@ -50,6 +50,7 @@
     "less-loader": "2.2.3",
     "postcss-loader": "0.9.1",
     "style-loader": "0.13.1",
+    "svg-inline-loader": "0.7.1",
     "url-loader": "0.5.7",
     "webpack": "2.3.3",
     "webpack-dev-server": "1.14.1"

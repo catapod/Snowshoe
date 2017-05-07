@@ -1,11 +1,15 @@
 import React from 'react';
 import '../styles/document-navigation.less';
+import arrow from '../assets/arrow.svg';
 
 
 function DocumentNavigation() {
     return (
         <div className='document-navigation'>
-            <div className='document-navigation__button document-navigation__button--left' />
+            <div
+                className='document-navigation__button document-navigation__button--left'
+                dangerouslySetInnerHTML={{__html: arrow}}
+            />
             <div className='document-navigation__button document-navigation__button--more document-navigation__droplink'>
                 ···
                 <div className='document-navigation__dropdown'>
@@ -18,7 +22,10 @@ function DocumentNavigation() {
                     <button className='document-navigation__button document-navigation__button--submit'>Перейти</button>
                 </div>
             </div>
-            <div className='document-navigation__button document-navigation__button--right' />
+            <div
+                className='document-navigation__button document-navigation__button--right'
+                dangerouslySetInnerHTML={{__html: arrow}}
+            />
         </div>
     );
 }

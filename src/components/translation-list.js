@@ -4,8 +4,9 @@ import uiKeys from '../constants/ui-keys';
 import {connect} from 'cerebral/react';
 import {tags, parts} from '../constants';
 import TranslationItem from './translation-item';
-import '../styles/translation-list.less';
 import sn from 'class-names';
+import '../styles/translation-list.less';
+import arrow from '../assets/arrow.svg';
 
 
 function TranslationList({items = [], activeTranslateId, expanded, haveDraft}) {
@@ -37,6 +38,7 @@ function TranslationList({items = [], activeTranslateId, expanded, haveDraft}) {
                 ))
                 : (restCount > 0 && (
                     <div className={sn('translation-list__more')}>
+                        <i className={sn('translation-list__icon')} dangerouslySetInnerHTML={{__html: arrow}} />
                         {uiKeys.showMore} {restCount}
                     </div>
                 ))}

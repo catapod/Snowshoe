@@ -35,36 +35,33 @@
     padding: 20px;
 
     cursor: pointer;
-
-    &:after {
-      display: block;
-
-      width: 16px;
-      height: 16px;
-
-      content: '';
-
-      background: url('./svg/arrow.svg') no-repeat center;
-    }
   }
 
   &__vote-up {
     left: 0;
 
     margin-left: -56px;
-
-    &:after {
-      transform: rotate(-90deg);
-    }
   }
 
   &__vote-down {
     right: 0;
 
-    margin-right: -56px;
+    margin-right: -40px;
+  }
 
-    &:after {
-      transform: rotate(90deg)
-    }
+  &__icon-up,
+  &__icon-down {
+    display: block;
+
+    width: 16px;
+    height: 16px;
+  }
+
+  &__icon-up {
+    transform: rotate(-90deg);
+  }
+
+  &__icon-down {
+    transform: rotate(90deg);
   }
 }

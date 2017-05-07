@@ -27,21 +27,16 @@
     line-height: 60px;
   }
 
-  &__back:before {
+  &__back-icon {
     position: absolute;
     top: 21px;
     left: -10px;
 
     width: 15px;
     height: 15px;
-
-    content: '';
-    transform: rotate(180deg);
-
-    background-image: url('./svg/arrow.svg');
   }
 
-  &__forward:after {
+  &__forward-icon {
     position: absolute;
     top: 21px;
     right: -10px;
@@ -49,9 +44,7 @@
     width: 15px;
     height: 15px;
 
-    content: '';
-
-    background-image: url('./svg/arrow.svg');
+    transform: rotate(180deg);
   }
 
   &__item {
@@ -89,6 +82,5 @@
       cursor: default;
       text-decoration: none;
     }
-
   }
 }
