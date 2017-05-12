@@ -10,8 +10,6 @@
 
   border: solid @gray;
   border-width: 1px 0;
-
-  .regular-text();
   
   &__back,
   &__forward {
@@ -24,28 +22,36 @@
 
     cursor: pointer;
 
-    color: @light-blue;
-
-    font-size: 14px;
     line-height: 60px;
+
+    .regular-text();
+    .link-color();
   }
-
-  &__back-icon {
+  
+  &__back-icon,
+  &__forward-icon {
     position: absolute;
-    top: 21px;
-    left: -10px;
+    top: 22px;
 
-    width: 15px;
-    height: 15px;
+    width: 16px;
+    height: 16px;
+
+    & > svg {
+      position: absolute;
+
+      width: 16px;
+      height: 16px;
+
+      fill: @light-blue;
+    }
+  }
+  
+  &__back-icon {
+    left: -17px;
   }
 
   &__forward-icon {
-    position: absolute;
-    top: 21px;
-    right: -10px;
-
-    width: 15px;
-    height: 15px;
+    right: -17px;
 
     transform: rotate(180deg);
   }
@@ -59,10 +65,10 @@
     cursor: pointer;
     text-align: center;
 
-    color: @light-blue;
-
-    font-size: 14px;
     line-height: 60px;
+
+    .regular-text();
+    .link-color();
 
     &:hover {
       text-decoration: underline;

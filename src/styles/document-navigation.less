@@ -24,6 +24,19 @@
       text-align: center;
 
       line-height: 30px;
+
+      & > svg {
+        width: 16px;
+        height: 30px;
+      }
+
+      & > svg > path {
+        fill: @dark-gray;
+      }
+
+      &:hover > svg > path {
+        fill: #fff;
+      }
     }
 
     &--right {
@@ -60,8 +73,7 @@
       border: solid @gray;
       border-width: 0 1px;
 
-      font-size: 35px;
-      line-height: 33px;
+      font-size: 30px;
     }
 
     &:hover,

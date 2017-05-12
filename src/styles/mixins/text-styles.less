@@ -2,7 +2,7 @@
 @import '../common/colors';
 
 .document-title() {
-  color: #000;
+  color: @black;
 
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
@@ -27,16 +27,18 @@
 }
 
 .bold-info() {
+  cursor: pointer;
+
   color: @dark-gray;
 
   font-family: 'Roboto', sans-serif;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: bold;
 
   &:hover {
     text-decoration: underline;
 
-    color: #000;
+    color: @black;
   }
 }
 
@@ -45,4 +47,8 @@
 
   font-family: 'Roboto', sans-serif;
   font-size: 12px
+}
+
+.link-color() {
+  color: @light-blue;
 }

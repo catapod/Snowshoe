@@ -45,6 +45,19 @@
     border-color: @violet;
     background-color: @violet;
   }
+
+  & > svg {
+    width: 27px;
+    height: 33px;
+    padding-left: 3px;
+
+    fill: @dark-gray;
+  }
+
+  &:hover > svg,
+  &--active > svg {
+    fill: #fff;
+  }
 }
 
 .hotkeys {

@@ -1,4 +1,5 @@
 @import './common/colors';
+@import './mixins/text-styles';
 
 .translation-list {
   width: 100%;
@@ -6,23 +7,29 @@
   &__more {
     display: block;
 
-    margin-top: 10px;
+    margin: -10px 0 15px 0;
+    padding-left: 20px;
 
     cursor: pointer;
 
-    color: @light-blue;
+    .light-info();
+    .link-color();
   }
 
   &__icon {
     position: relative;
-    top: 2px;
+    top: 3px;
 
     display: inline-block;
 
-    width: 15px;
-    height: 15px;
+    width: 16px;
+    height: 16px;
     margin-right: 5px;
 
-    transform: rotate(90deg);
+    transform: rotate(-90deg);
+
+    & > svg {
+      fill: @light-blue;
+    }
   }
 }
