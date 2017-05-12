@@ -1,35 +1,23 @@
 @import './common/colors';
-@import './fonts/roboto-regular';
+@import './mixins/text-styles';
 
 .comment-item {
   &__author,
   &__date {
     display: inline-block;
 
-    color: @dark-gray;
-
-    font-size: 13px;
+    .light-info();
   }
 
   &__author {
     margin-right: 5px;
 
-    font-weight: bold;
-
-    &:hover {
-      text-decoration: underline;
-
-      color: @black;
-    }
+    .bold-info();
   }
 
   &__body {
     display: block;
 
-    margin-top: 10px;
-
-    color: @black;
-
-    font-size: 13px;
+    .regular-text();
   }
 }

@@ -1,0 +1,48 @@
+@import '../fonts/roboto/roboto';
+@import '../common/colors';
+
+.document-title() {
+  color: #000;
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+}
+
+.uppercase-title() {
+  text-transform: uppercase;
+
+  color: @dark-gray;
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  line-height: 27.5px;
+}
+
+.regular-text() {
+  color: @black;
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  line-height: 1.3em;
+}
+
+.bold-info() {
+  color: @dark-gray;
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+
+  &:hover {
+    text-decoration: underline;
+
+    color: #000;
+  }
+}
+
+.light-info() {
+  color: @dark-gray;
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px
+}

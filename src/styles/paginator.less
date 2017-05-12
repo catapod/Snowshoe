@@ -1,4 +1,5 @@
 @import './common/colors';
+@import './mixins/text-styles';
 
 .paginator {
   width: 100%;
@@ -9,6 +10,8 @@
 
   border: solid @gray;
   border-width: 1px 0;
+
+  .regular-text();
   
   &__back,
   &__forward {

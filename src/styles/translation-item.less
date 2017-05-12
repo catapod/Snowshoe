@@ -1,5 +1,5 @@
 @import './common/colors';
-@import './fonts/roboto-regular';
+@import './mixins/text-styles';
 
 @side: 40px;
 @gap: 20px;
@@ -19,9 +19,7 @@
 
     width: 100%;
 
-    font-family: 'Roboto';
-    font-size: 13px;
-    line-height: 1.3em;
+    .regular-text();
   }
 
   &__info {
@@ -33,14 +31,7 @@
   }
 
   &__author {
-    color: @dark-gray;
-
-    font-weight: bold;
-    &:hover {
-      text-decoration: underline;
-
-      color: #000;
-    }
+    .bold-info();
   }
 
   &__side {

@@ -1,3 +1,4 @@
+@import './mixins/text-styles';
 @import './common/colors';
 
 .chunk-item {
@@ -13,7 +14,7 @@
 
     vertical-align: top;
 
-    font-size: 13px;
+    .regular-text();
   }
 
   &__original {
@@ -48,9 +49,7 @@
 
     text-align: center;
 
-    color: @dark-gray;
-
-    font-size: 13px;
+    .bold-info();
   }
 
   &__text {
@@ -62,20 +61,10 @@
   &__info {
     margin-top: 10px;
 
-    color: @dark-gray;
-
-    font-size: 12px;
+    .light-info();
   }
 
   &__number {
-    color: @dark-gray;
-
-    font-weight: bold;
-
-    &:hover {
-      text-decoration: underline;
-
-      color: #000;
-    }
+    .bold-info();
   }
 }

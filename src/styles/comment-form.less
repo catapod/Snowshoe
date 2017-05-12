@@ -1,5 +1,5 @@
 @import './common/colors';
-@import './fonts/roboto-regular';
+@import './mixins/text-styles';
 
 .comment-form {
   &__title {
@@ -32,9 +32,7 @@
     border-radius: 4px;
     background-color: #fff;
 
-    font-family: 'Roboto';
-    font-size: 13px;
-    line-height: 1.3em;
+    .regular-text();
 
     &:focus {
       box-shadow: 0 1px 4px rgba(0, 0, 0, .1);

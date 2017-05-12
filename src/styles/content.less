@@ -1,5 +1,5 @@
+@import './mixins/text-styles';
 @import './common/reset';
-@import './fonts/roboto-regular';
 
 .content {
   position: absolute;
@@ -14,9 +14,6 @@
   background-color: #fff;
   box-shadow: -10px 0 20px rgba(0, 0, 0, .2);
 
-  font-family: 'Roboto';
-  line-height: 1.3em;
-
   &__sidebar {
     position: absolute;
     z-index: 1;
@@ -28,7 +25,6 @@
 
     background-color: #f4f4f5;
 
-    font-family: 'Roboto';
-    line-height: 1.3em;
+    .regular-text();
   }
 }
