@@ -1,4 +1,5 @@
 @import './mixins/with-dropdown';
+@import './mixins/radio-buttons';
 
 .comment-list-sort {
   float: right;
@@ -10,19 +11,15 @@
 
   .with-dropdown();
 
-  &__dropdown {
-    left: -65px;
-
-    width: 160px;
-    padding: 15px
+  &__input {
+    .radio-buttons();
   }
 
-  &__label {
-    display: block;
+  &__dropdown {
+    left: -70px;
 
-    height: 35px;
-
-    line-height: 35px;
+    width: 170px;
+    padding: 10px 20px
   }
 
   & > i > svg {

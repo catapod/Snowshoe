@@ -8,12 +8,10 @@ function CommentListSort() {
         <div className='comment-list-sort comment-list-sort__droplink'>
             <i dangerouslySetInnerHTML={{__html: iconSort}} />
             <div className='comment-list-sort__dropdown'>
-                <label className='comment-list-sort__label'>
-                    <input type='radio' name='comments-sort' /> Сначала новые
-                </label>
-                <label className='comment-list-sort__label'>
-                    <input type='radio' name='comments-sort' /> Сначала старые
-                </label>
+                <input id='first-new' type='radio' name='comments-sort' className='comment-list-sort__input'/>
+                <label htmlFor='first-new'>Сначала новые</label>
+                <input id='first-old' type='radio' name='comments-sort' className='comment-list-sort__input'/>
+                <label htmlFor='first-old'>Сначала старые</label>
             </div>
         </div>
     );
