@@ -5,6 +5,7 @@
   width: 100%;
   height: 60px;
   margin-top: 15px;
+  padding: 20px 0;
 
   text-align: center;
 
@@ -15,14 +16,12 @@
   &__forward {
     position: relative;
 
-    display: inline-block;
+    display: inline;
 
     height: 60px;
     padding: 0 11px;
 
     cursor: pointer;
-
-    line-height: 60px;
 
     .regular-text();
     .link-color();
@@ -56,15 +55,15 @@
   }
 
   &__item {
-    display: inline-block;
+    position: relative;
+
+    display: inline;
 
     height: 60px;
     padding: 0 11px;
 
     cursor: pointer;
     text-align: center;
-
-    line-height: 60px;
 
     .regular-text();
     .link-color();
@@ -74,8 +73,20 @@
     }
 
     &--current {
-      box-sizing: content-box;
-      height: 55px;
+      cursor: default;
+
+      color: @black;
+    }
+
+    &--current:after {
+      position: absolute;
+      bottom: -22px;
+      left: 0;
+
+      width: 100%;
+      height: 4px;
+
+      content: '';
 
       color: #000;
       border-bottom: 4px solid @violet;
