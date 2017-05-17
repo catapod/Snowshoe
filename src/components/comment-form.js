@@ -8,7 +8,7 @@ import send from '../assets/send.svg';
 function CommentForm() {
     return (
         <div className='comment-form'>
-            <p className='comment-form__title'>Добавить комментарий</p>
+            <p className='comment-form__title'>Добавить комментарий:</p>
             <div className='comment-form__controls'>
                 <textarea
                     className='comment-form__text'
