@@ -12,9 +12,12 @@
   }
 
   &__title {
-    letter-spacing: 1px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
 
-    .uppercase-title();
+    line-height: inherit; //30px
+
+    .medium-text(12px, @blured-secondary-text-color);
   }
 
   &__item {
