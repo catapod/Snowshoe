@@ -77,7 +77,11 @@
   }
 
   &__title {
-    .uppercase-title();
+    text-transform: uppercase;
+
+    letter-spacing: 1.5px;
+
+    .uppercased-text(10px);
   }
 
   &__group {
@@ -89,7 +93,7 @@
   &__command {
     margin: 10px 0;
 
-    .light-info();
+    .medium-text();
   }
 
   &__key {
@@ -109,6 +113,8 @@
 
   &__do {
     margin-left: 10px;
+
+    .regular-text();
   }
 
 }
