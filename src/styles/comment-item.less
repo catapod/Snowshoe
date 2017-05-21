@@ -5,14 +5,21 @@
   &__author,
   &__date {
     display: inline-block;
-
-    .light-info();
   }
 
   &__author {
     margin-right: 5px;
 
-    .bold-info();
+    .medium-text(12px, @blured-secondary-text-color);
+    &:hover {
+      text-decoration: underline;
+
+      color: fade(@black, 85%);
+    }
+  }
+
+  &__date {
+    .light-text(12px, @blured-secondary-text-color);
   }
 
   &__body {
@@ -20,6 +27,6 @@
 
     margin-top: 5px;
 
-    .regular-text();
+    .regular-text(@color: @blured-main-text-color);
   }
 }
