@@ -1,4 +1,4 @@
-@import './fonts/roboto-regular';
+@import './mixins/text-styles';
 
 .user-menu {
   float: right;
@@ -42,11 +42,8 @@
 
     text-align: center;
 
-    color: #fff;
-
-    font-family: 'Roboto';
-    font-size: 13px;
-    font-weight: bold;
     line-height: 30px;
+
+    .regular-text(14px, #fff);
   }
 }

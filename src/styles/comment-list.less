@@ -1,5 +1,5 @@
 @import './common/colors';
-@import './fonts/roboto-regular';
+@import './mixins/text-styles';
 
 .comment-list {
   &__head {
@@ -12,12 +12,9 @@
   }
 
   &__title {
-    letter-spacing: 1px;
-    text-transform: uppercase;
+    line-height: inherit; //30px
 
-    color: @dark-gray;
-
-    font-size: 12px;
+    .uppercased-text(12px, @blured-secondary-text-color);
   }
 
   &__item {

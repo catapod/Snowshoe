@@ -1,35 +1,32 @@
 @import './common/colors';
-@import './fonts/roboto-regular';
+@import './mixins/text-styles';
 
 .comment-item {
   &__author,
   &__date {
     display: inline-block;
-
-    color: @dark-gray;
-
-    font-size: 13px;
   }
 
   &__author {
     margin-right: 5px;
 
-    font-weight: bold;
-
+    .medium-text(12px, @blured-secondary-text-color);
     &:hover {
       text-decoration: underline;
 
-      color: @black;
+      color: fade(@black, 85%);
     }
+  }
+
+  &__date {
+    .light-text(12px, @blured-secondary-text-color);
   }
 
   &__body {
     display: block;
 
-    margin-top: 10px;
+    margin-top: 5px;
 
-    color: @black;
-
-    font-size: 13px;
+    .regular-text(@color: @blured-main-text-color);
   }
 }

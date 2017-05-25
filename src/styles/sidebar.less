@@ -1,16 +1,11 @@
-@import './fonts/roboto-regular';
+@import './mixins/text-styles';
 
 .sidebar {
-  position: absolute;
-  z-index: 1;
-  right: 0;
-
-  width: 30%;
-  min-height: calc(~'100vh - 60px');
+  flex-basis: 30%;
   padding: 80px 6% 120px 50px;
+  z-index: 1;
 
   background-color: #f4f4f5;
 
-  font-family: 'Roboto';
-  line-height: 1.3em;
+  .regular-text();
 }

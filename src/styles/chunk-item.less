@@ -1,3 +1,4 @@
+@import './mixins/text-styles';
 @import './common/colors';
 
 .chunk-item {
@@ -13,7 +14,7 @@
 
     vertical-align: top;
 
-    font-size: 13px;
+    .regular-text();
   }
 
   &__original {
@@ -36,21 +37,19 @@
   &__comments {
     display: inline-block;
 
-    width: 17px;
-    height: 17px;
-    margin-bottom: 3px;
+    width: 15px;
+    height: 15px;
+    margin-bottom: 7px;
 
     cursor: pointer;
   }
 
   &__comments-count {
-    margin-top: -10px;
+    margin-top: -5px;
 
     text-align: center;
 
-    color: @dark-gray;
-
-    font-size: 13px;
+    .medium-text(12px);
   }
 
   &__text {
@@ -62,20 +61,15 @@
   &__info {
     margin-top: 10px;
 
-    color: @dark-gray;
-
-    font-size: 12px;
+    .light-text(12px);
   }
 
   &__number {
-    color: @dark-gray;
-
-    font-weight: bold;
-
+    .medium-text(12px);
     &:hover {
       text-decoration: underline;
 
-      color: #000;
+      color: @main-text-color;
     }
   }
 }

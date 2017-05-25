@@ -1,21 +1,13 @@
+@import './mixins/text-styles';
 @import './common/reset';
-@import './fonts/roboto-regular';
 
 .content {
-  position: absolute;
-  z-index: 10;
-
-  float: left;
-
-  width: 70%;
-  min-height: calc(~'100vh - 60px');
+  flex-basis: 70%;
   padding: 40px 50px 120px 8vw;
+  z-index: 5;
 
   background-color: #fff;
-  box-shadow: -10px 0 20px rgba(0, 0, 0, .2);
-
-  font-family: 'Roboto';
-  line-height: 1.3em;
+  box-shadow: -5px 0 20px rgba(0, 0, 0, .1);
 
   &__sidebar {
     position: absolute;
@@ -28,7 +20,6 @@
 
     background-color: #f4f4f5;
 
-    font-family: 'Roboto';
-    line-height: 1.3em;
+    .regular-text();
   }
 }

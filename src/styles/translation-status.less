@@ -1,3 +1,6 @@
+@import './common/colors';
+@import './mixins/text-styles';
+
 .translation-status {
   position: relative;
 
@@ -14,13 +17,15 @@
     margin: 0 auto 12px;
 
     border-radius: 50%;
-    background-color: #4072ce;
+    background-color: @light-blue;
   }
 
   &__rating {
     position: relative;
 
     display: inline-block;
+
+    .medium-text(12px)
   }
 
   &__vote-up,

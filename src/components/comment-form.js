@@ -11,7 +11,7 @@ import {tags} from '../constants';
 function CommentForm({text, onChange, onSubmit}) {
     return (
         <div className='comment-form'>
-            <p className='comment-form__title'>Добавить комментарий</p>
+            <p className='comment-form__title'>Добавить комментарий:</p>
             <div className='comment-form__controls'>
                 <textarea
                     value={text}

@@ -1,0 +1,47 @@
+@import '../common/colors';
+
+@label-height: 40px;
+@circle-size: 13px;
+
+.radio-buttons() {
+  display: none;
+
+  &:checked + .radio-buttons__label:before {
+    padding: 0 0 1px 1px;
+
+    content: '●';
+
+    color: @violet;
+
+    font-size: 10px;
+    line-height: 10px;
+  }
+}
+
+.radio-buttons__label {
+    position: relative;
+
+    display: block;
+
+    height: @label-height;
+    padding-left: 20px;
+
+    cursor: pointer;
+
+    line-height: @label-height;
+
+    &:before {
+      position: absolute;
+      top: (@label-height - @circle-size) / 2;
+      left: 0;
+
+      box-sizing: border-box;
+      width: @circle-size;
+      height: @circle-size;
+
+      content: '';
+
+      border: 1px solid @dark-gray;
+      border-radius: 50%;
+    }
+  }

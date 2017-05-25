@@ -1,0 +1,40 @@
+@import '../fonts/roboto/roboto';
+@import '../common/colors';
+
+@default-font-size: 14px;
+
+.font(@size, @color, @weight) {
+  color: @color;
+
+  font-family: 'Roboto', sans-serif;
+  font-size: @font-size;
+  font-weight: @weight;
+}
+
+.light-text(@font-size: @default-font-size, @color: @secondary-text-color) {
+  .font(@font-size, @color, 300);
+}
+
+.regular-text(@font-size: @default-font-size, @color: @main-text-color) {
+  .font(@font-size, @color, 400);
+}
+
+.medium-text(@font-size: @default-font-size, @color: @secondary-text-color) {
+  .font(@font-size, @color, 500);
+}
+
+.bold-text(@font-size: @default-font-size, @color: @secondary-text-color) {
+  .font(@font-size, @color, 700);
+}
+
+.uppercased-text(@font-size: @default-font-size, @color: @secondary-text-color) {
+  text-transform: uppercase;
+
+  letter-spacing: 1.5px;
+
+  .medium-text(@font-size, @color);
+}
+
+.link-color() {
+  color: @light-blue;
+}
