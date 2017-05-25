@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import '../styles/comment-item.less';
 
 
@@ -11,5 +12,11 @@ function CommentItem({author, date, text}) {
         </div>
     );
 }
+
+CommentItem.propTypes = {
+    author: PropTypes.string,
+    date: PropTypes.string,
+    text: PropTypes.string
+};
 
 export default CommentItem;

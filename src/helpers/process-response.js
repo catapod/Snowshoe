@@ -5,7 +5,7 @@ const comment = new schema.Entity(parts.comments, {}, {
     idAttribute: 'comment_id',
     processStrategy: (entity, parent) => ({
         ...entity,
-        parentId: parent.translation_id
+        parentId: parent.chunk_id
     })
 });
 

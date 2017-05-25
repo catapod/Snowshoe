@@ -12,7 +12,12 @@ export default {
         },
         ...translations
     },
-    [parts.comments]: comments,
+    [parts.comments]: {
+        [parts.draftId]: {
+            body: ''
+        },
+        ...comments
+    },
     [parts.activeChunkId]: null,
     [parts.activeTranslateId]: null
 };
