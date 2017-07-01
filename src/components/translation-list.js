@@ -48,7 +48,7 @@ function TranslationList({items = [], activeTranslateId, expanded, haveDraft}) {
 
 TranslationList.propTypes = {
     items: PropTypes.array,
-    activeTranslateId: PropTypes.number,
+    activeTranslateId: PropTypes.string,
     expanded: PropTypes.bool,
     haveDraft: PropTypes.bool
 };
