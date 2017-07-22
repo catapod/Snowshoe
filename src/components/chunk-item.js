@@ -40,7 +40,7 @@ function ChunkItem({id, text, active, onClick}) {
 }
 
 ChunkItem.propTypes = {
-    id: PropTypes.number,
+    id: PropTypes.string,
     text: PropTypes.string,
     active: PropTypes.bool,
     onClick: PropTypes.func

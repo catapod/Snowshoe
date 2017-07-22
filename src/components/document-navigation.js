@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/document-navigation.less';
+import sn from 'class-names';
 import arrow from '../assets/arrow.svg';
 
 
@@ -10,7 +11,13 @@ function DocumentNavigation() {
                 className='document-navigation__button document-navigation__button--left'
                 dangerouslySetInnerHTML={{__html: arrow}}
             />
-            <div className='document-navigation__button document-navigation__button--more document-navigation__droplink'>
+            <div
+                className={sn(
+                    'document-navigation__button',
+                    'document-navigation__button--more',
+                    'document-navigation__droplink'
+                )}
+            >
                 ···
                 <div className='document-navigation__dropdown'>
                     <a href='#' className='document-navigation__link'>К моему последнему переводу</a>

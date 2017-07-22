@@ -20,7 +20,7 @@ function ChunkList({items, activeId}) {
 
 ChunkList.propTypes = {
     items: PropTypes.array,
-    activeId: PropTypes.number
+    activeId: PropTypes.string
 };
 
 export default connect({
