@@ -11,7 +11,7 @@ function ChunkList({items, activeId}) {
         <div className={sn('chunk-list')}>
             {items.map(id => (
                 <div key={id} className={sn('chunk-list__item')}>
-                    <ChunkItem id={id} active={id === activeId} />
+                    <ChunkItem id={id} active={id === String(activeId)} />
                 </div>
             ))}
         </div>
@@ -20,7 +20,7 @@ function ChunkList({items, activeId}) {
 
 ChunkList.propTypes = {
     items: PropTypes.array,
-    activeId: PropTypes.number
+    activeId: PropTypes.string
 };
 
 export default connect({

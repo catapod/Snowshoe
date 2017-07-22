@@ -1,3 +1,4 @@
+import {init} from './chains';
 import {
     translateClicked,
     translateChanged,
@@ -11,6 +12,7 @@ import {
 } from './chains/comment';
 
 export default {
+    [signalNames.init]: init,
     [signalNames.chunkClicked]: chunkClicked,
     [signalNames.commentChanged]: commentChanged,
     [signalNames.commentSubmitted]: commentSubmitted,
