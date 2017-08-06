@@ -13,6 +13,7 @@ export const parts = {
 };
 
 export const signalNames = {
+    init: 'init',
     chunkClicked: 'chunkClicked',
     commentChanged: 'commentChanged',
     commentSubmitted: 'commentSubmitted',
@@ -43,6 +44,7 @@ export const tags = {
 
     chunkText: state`${parts.chunks}.${props`id`}.body`,
     translation: state`${parts.translations}.${props`id`}`,
+    newTranslation: state`${parts.translations}.${props`result.id`}`,
     translationRates: state`${parts.translations}.${props`id`}.rates`,
     translationIds: state`${parts.chunks}.${props`chunkId`}.${parts.translations}`,
     newComment: state`${parts.comments}.${props`${parts.uuid}`}`,

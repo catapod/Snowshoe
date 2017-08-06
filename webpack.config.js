@@ -102,7 +102,14 @@ const config = {
     devServer: {
         contentBase: path.join(__dirname, 'dist'), // boolean | string | array, static file location
         historyApiFallback: true,
-        noInfo: true
+        noInfo: true,
+        proxy: {
+            '/api': {
+                target: 'http://junkyard.catapod.xyz',
+                changeOrigin: true,
+                secure: false
+            }
+        }
     }
 };
 
